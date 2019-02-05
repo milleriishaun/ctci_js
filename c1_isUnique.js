@@ -12,10 +12,10 @@ function isUnique(str) {
   }
   return true;
 }
-//benchmark
-console.time('start');
-console.log(isUnique('sttriggnp'));
-console.timeEnd('end');
+//benchmark: 3.022ms(too slow)
+console.time('with very few records in the map');
+console.log('striggnp', isUnique('striggnp'));
+console.timeEnd('with very few records in the map');
 
 // try 2
 // time: O(n)
@@ -37,11 +37,9 @@ function isUnique(str) {
 }
 
 //tests
-//benchmark
-// console.log(isUnique('string'));
-console.time('start');
-console.log(isUnique('sttriggnp'));
-console.timeEnd('end');
+//benchmark 1.155ms(much faster)
+console.time('with very few records in the map');
+console.log('striggnp', isUnique('striggnp'));
+console.timeEnd('with very few records in the map');
 
 // try 3
-console.log(isUnique('dsdsd'));
