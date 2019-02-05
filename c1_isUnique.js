@@ -1,29 +1,10 @@
 var Benchmark = require('benchmark');
-
 var suite = new Benchmark.Suite();
-
-// add tests
-suite
-  .add('RegExp#test', function() {
-    /o/.test('Hello World!');
-  })
-  .add('String#indexOf', function() {
-    'Hello World!'.indexOf('o') > -1;
-  })
-  // add listeners
-  .on('cycle', function(event) {
-    console.log(String(event.target));
-  })
-  .on('complete', function() {
-    console.log('Fastest is ' + this.filter('fastest').map('name'));
-  })
-  // run async
-  .run({ async: true });
 
 // try 1
 // time: O(n^2)
 // space: O(1)
-function issUnique(str) {
+function isUnique1(str) {
   let arr = str.split('');
   for (let i = 0; i < arr.length - 1; i++) {
     for (let j = i + 1; j < arr.length; j++) {
@@ -35,26 +16,10 @@ function issUnique(str) {
   return true;
 }
 
-//benchmark: 3.144ms(too slow)
-console.time('t1');
-for (let i = 0; i < 10000; i++) {
-  isUnique('striggnp');
-}
-console.timeEnd('t1');
-console.time('t2');
-for (let i = 0; i < 10000; i++) {
-  isUnique('striggnp');
-}
-console.timeEnd('t2');
-console.time('t2.1');
-for (let i = 0; i < 10000; i++) {
-  isUnique('striggnp');
-}
-console.timeEnd('t2.1');
 // try 2
 // time: O(n)
 // space: O(1)
-function isUnique(str) {
+function isUnique2(str) {
   let arr = []; //I don't need to identify 128 in the []
   // because JS arrays expand to fit, making any # of possible chars handled.
   for (let j = 0; j < str.length; j++) {
@@ -68,29 +33,12 @@ function isUnique(str) {
   return true;
 }
 
-//tests
-//benchmark 0.574ms(much faster)(w/o console.log)
-//note: w/o console.log, the difference in speed is harder to
-//see, and can often be too close to tell.
-//benchmark 1.155ms(much faster)(w/ console.log)
-//note: now was see the difference between O(n^2) and O(n)
-console.time('t3');
-for (let i = 0; i < 10000; i++) {
-  isUnique('striggnp'); //your code here
-}
-console.timeEnd('t3');
-console.time('t4');
-for (let i = 0; i < 10000; i++) {
-  isUnique('striggnp');
-}
-console.timeEnd('t4');
-
 // try 3, with bitwise operators
 //note: idk how to use bitwise well, so mostly copying
-function isUnique(str) {
+function isUnique3(str) {
   let checker = 0;
   for (let i = 0; i < str.length; i++) {
-    let val = str.charAt(i) - 'a';
+    let val = str.charCodeAt(i) - 'a'.charCodeAt(0);
     if ((checker & (1 << val)) > 0) {
       return false;
     }
@@ -98,16 +46,34 @@ function isUnique(str) {
   }
   return true;
 }
+console.log(isUnique3('string'));
+console.log(isUnique3('striggnp'));
 
-//benchmark: 0.157ms(fastest)(w/o console.log)
-//benchmark: 0.426ms(fastest)(w/ console.log)
-console.time('t5');
-for (let i = 0; i < 10000; i++) {
-  isUnique('striggnp');
-}
-console.timeEnd('t5');
-console.time('t6');
-for (let i = 0; i < 10000; i++) {
-  isUnique('striggnp');
-}
-console.timeEnd('t6');
+/*
+// add tests
+suite
+  .add('isUnique1', function() {
+    isUnique1('striggnp');
+  })
+  .add('isUnique2', function() {
+    isUnique2('striggnp');
+  })
+  .add('isUnique3', function() {
+    isUnique3('striggnp');
+  })
+  // add listeners
+  .on('cycle', function(event) {
+    console.log(String(event.target));
+  })
+  .on('complete', function() {
+    console.log('Fastest is ' + this.filter('fastest').map('name'));
+  })
+  // run async
+  .run({ async: true });
+
+//results:
+// isUnique1 x 3,689,300 ops/sec ±1.30% (60 runs sampled)
+// isUnique2 x 3,995,171 ops/sec ±1.49% (62 runs sampled)
+// isUnique3 x 57,454,366 ops/sec ±3.04% (58 runs sampled)
+// Fastest is isUnique3
+*/

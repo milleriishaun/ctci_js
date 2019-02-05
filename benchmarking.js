@@ -1,4 +1,9 @@
-// Benchmarking asychronous code
+// Note that benchmarking using console.time('str');
+// then console.timeEnd('str'); does not give accurate results.
+// So it is best not to use it to benchmark. Best is benchmark.js currently,
+// or in Chrome browser.
+
+// Benchmarking asychronous code and nonasync code
 var Benchmark = require('benchmark');
 
 var suite = new Benchmark.Suite();
