@@ -84,10 +84,10 @@ function checkPermutation4(str1, str2) {
   let letters = [];
   // Assign each letter in str1 to position in letters array
   for (let i = 0; i < str1.length; i++) {
-    if (letters[str1.charCodeAt(i)] === str1.charCodeAt(i)) {
-      letters[str1.charCodeAt(i)] += str1.charCodeAt(i);
-    } else {
+    if (letters[str1.charCodeAt(i)] === null) {
       letters[str1.charCodeAt(i)] = str1.charCodeAt(i);
+    } else {
+      letters[str1.charCodeAt(i)] += str1.charCodeAt(i);
     }
   }
   // Subtract by charCode each letter in str2 from certain position in letters.
