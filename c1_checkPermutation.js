@@ -76,7 +76,7 @@ console.log(checkPermutation3('eleven', 'eleven')); // true
 console.log(checkPermutation3('seven', 'nesve')); // true
 
 //results:
-// checkPermutation1 x 66,430,564 ops/sec ±1.61% (59 runs sampled)
-// checkPermutation2 x 595,580 ops/sec ±1.58% (58 runs sampled)
-// checkPermutation3 x 551,374 ops/sec ±2.02% (59 runs sampled)
+// checkPermutation1 x 66,700,393 ops/sec ±2.36% (56 runs sampled)
+// checkPermutation2 x 585,483 ops/sec ±1.79% (55 runs sampled)
+// checkPermutation3 x 573,031 ops/sec ±1.48% (60 runs sampled)
 // Fastest is checkPermutation1
