@@ -39,14 +39,17 @@ function isUnique3(str) {
   let checker = 0;
   for (let i = 0; i < str.length; i++) {
     let val = str.charCodeAt(i) - 'a'.charCodeAt(0);
+    console.log('val', val);
+    console.log('1 << val', 1 << val);
     if ((checker & (1 << val)) > 0) {
       return false;
     }
+    console.log(checker);
     checker |= 1 << val;
+    console.log(checker);
   }
   return true;
 }
-console.log(isUnique3('string'));
 console.log(isUnique3('striggnp'));
 
 /*

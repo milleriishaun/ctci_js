@@ -1,3 +1,26 @@
+var Benchmark = require('benchmark');
+var suite = new Benchmark.Suite();
+/*
+suite
+  .add('palindromePermutation1', function() {
+    palindromePermutation1('TaTac');
+  })
+  .add('palindromePermutation2, function() {
+    palindromePermutation2('TaTac');
+  })
+  .on('cycle', function(event) {
+    console.log(String(event.target));
+  })
+  .on('complete', function() {
+    console.log('Fastest is ' + this.filter('fastest').map('name'));
+  })
+  .run({ async: true });
+*/
+
+// try 1 (needed help w/finding permutations b/c forgot recursion gets n!)
+// time: O(xn!)
+// space: O(n) b/c of call stack
+
 // Pseudocode
 // function getAllPermutations (string)
 // define results
@@ -11,7 +34,7 @@
 //     add defined char and innerPermutations char
 // return results
 
-function getAllPermutations(str) {
+function getAllPermutations1(str) {
   let results = [];
 
   if (str.length === 1) {
@@ -30,7 +53,7 @@ function getAllPermutations(str) {
   return results;
 }
 
-function palindromePermutation(str) {
+function palindromePermutation1(str) {
   let strArr = str
     .toLowerCase()
     .split('')
@@ -46,4 +69,65 @@ function palindromePermutation(str) {
   }
 }
 
-palindromePermutation('abcd');
+// I got owned by the solutions in ctci, since they all avoided
+// the task of finding all the permutations through O(n!)(b/c infeasible)
+// Now to check how the person actually solved it JS.
+
+function palindromePermutation2(str) {
+  let chars = {};
+  let currChar = 0;
+  let isPerm = true;
+  let mulligan = false;
+  // pump in the characters
+  str.split('').forEach(function(char) {
+    if (char !== ' ') {
+      currChar = char.toLowerCase();
+      if (chars[currChar] === undefined) {
+        chars[currChar] = 0;
+      }
+      chars[char]++;
+    }
+  });
+  // check if remainder for each letter, first remainder = mulligan = true,
+  // then, second remainder = milligan true... making isPerm false.
+  Object.keys(chars).forEach(function(char) {
+    if (chars[char] % 2 > 0) {
+      if (mulligan) {
+        isPerm = false;
+      } else {
+        mulligan = true;
+      }
+    }
+  });
+  return isPerm;
+}
+
+function palindromePermutation3(str) {
+  let chars = {};
+  let currChar = 0;
+  let checker = 0;
+  // pump in the characters
+  str.split('').forEach(function(char) {
+    if (char !== ' ') {
+      currChar = char.toLowerCase();
+      if (chars[currChar] === undefined) {
+        chars[currChar] = 0;
+      }
+      chars[char]++;
+    }
+  });
+  // check if remainder for each letter, first remainder = mulligan = true,
+  // then, second remainder = milligan true... making isPerm false.
+  Object.keys(chars).forEach(function(char) {
+    if (chars[char] % 2 > 0) {
+      if (mulligan) {
+        isPerm = false;
+      } else {
+        mulligan = true;
+      }
+    }
+  });
+  return isPerm;
+}
+
+console.log(palindromePermutation3('racecarr'));
