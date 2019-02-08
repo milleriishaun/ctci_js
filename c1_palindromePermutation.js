@@ -119,12 +119,9 @@ function palindromePermutation3(str) {
   // check if remainder for each letter, first remainder = mulligan = true,
   // then, second remainder = milligan true... making isPerm false.
   Object.keys(chars).forEach(function(char) {
-    if (chars[char] % 2 > 0) {
-      if (mulligan) {
-        isPerm = false;
-      } else {
-        mulligan = true;
-      }
+    let val = char.charCodeAt(0) - 'a'.charCodeAt(0);
+    let mask = 1 << val;
+    if (checker & (mask == 0)) {
     }
   });
   return isPerm;
