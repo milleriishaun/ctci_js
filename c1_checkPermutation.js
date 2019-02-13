@@ -11,6 +11,9 @@ suite
   .add('checkPermutation4', function() {
     checkPermutation4('string', 'flings');
   })
+  .add('checkPermutation6', function() {
+    checkPermutation4('string', 'flings');
+  })
   .on('cycle', function(event) {
     console.log(String(event.target));
   })
@@ -122,13 +125,65 @@ function checkPermutation5(str1, str2) {
   return true;
 }
 
-console.log(checkPermutation4('string', 'gnirts')); // true
-console.log(checkPermutation4('string', 'flings')); // false
-console.log(checkPermutation4('eleven', 'elevvn')); // false
-console.log(checkPermutation4('seven', 'nesve')); // true
+/**
+ * CHECK PERMUTATION
+ * Given two strings, write a method to decide if one is a
+ * permutation of the other.
+ * I: 2 strings
+ * O: boolean
+ * C: optimize
+ * E: empty string, different lengths
+ */
+
+// time complexity: O(2n)
+// space complexity: O(n)
+
+// from ChirpinmermaidCodes
+let checkPermutation6 = (s1, s2) => {
+  // if two strings have diff lengths, automatically return false
+  // one way: sort both strings and compare - O(n log n), not efficient
+  // optimized way: make a map of one string, and check the second string
+  let hash = {};
+  if (s1.length !== s2.length) {
+    return false;
+  }
+
+  for (let i = 0; i < s1.length; i++) {
+    let c = s1[i];
+    if (hash[c]) {
+      hash[c]++; // increment the count of the char
+    } else {
+      hash[c] = 1; // otherwise, it's the 1st encounter, so store it
+    }
+  }
+
+  for (let i = 0; i < s2.length; i++) {
+    let c = s2[i];
+    if (hash[c] && hash !== 0) {
+      hash[c]--;
+    } else {
+      return false;
+    }
+  }
+  return true;
+};
+
+console.log(
+  checkPermutation6('seven', 'nesve') === true,
+  checkPermutation6('string', 'gnirts') === true,
+  checkPermutation6('', '') === true,
+  checkPermutation6('so', 'os') === true,
+  checkPermutation6('restful', 'fluster') === true,
+  checkPermutation6('sos', 'os') === false,
+  checkPermutation6('abc', 'abz') === false,
+  checkPermutation6('baab', 'bbba') === false,
+  checkPermutation6('string', 'flings') === false,
+  checkPermutation6('eleven', 'elevvn') === false
+);
 
 //results:
-// checkPermutation2 x 593,982 ops/sec ±1.26% (58 runs sampled)
-// checkPermutation3 x 558,850 ops/sec ±1.40% (61 runs sampled)
-// checkPermutation4 x 1,438,668 ops/sec ±2.43% (59 runs sampled)
-// Fastest is checkPermutation4
+// checkPermutation2 x 348,271 ops/sec ±4.64% (42 runs sampled)
+// checkPermutation3 x 366,723 ops/sec ±4.00% (46 runs sampled)
+// checkPermutation4 x 873,383 ops/sec ±4.52% (44 runs sampled)
+// checkPermutation6 x 958,603 ops/sec ±6.08% (49 runs sampled)
+// Fastest is checkPermutation6
