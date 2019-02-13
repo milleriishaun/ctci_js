@@ -191,7 +191,8 @@ console.log(
   palindromePermutation4('aaaabbbbcc') === true,
   palindromePermutation4('') === true,
   palindromePermutation4('chirpingmermaid') === false,
-  palindromePermutation4('aabc') === false
+  palindromePermutation4('aabc') === false,
+  palindromePermutation4('aabccc') === false
 );
 
 // results:
