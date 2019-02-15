@@ -135,10 +135,10 @@ function build_char_frequency(str) {
 }
 
 function check_odd(obj) {
-  let result = true;
+  let result = false;
   Object.values(obj).map(count => {
-    if (count % 2 === 1) {
-      result = false;
+    if (count % 2 === 0) {
+      result = true;
     }
   });
   return result;
