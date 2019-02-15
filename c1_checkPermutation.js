@@ -55,15 +55,6 @@ suite
   })
   .run({ async: true });
 
-// algos sol
-// CTCI JS Sol
-// ctci
-// CTCI JS
-// CTCI ES5
-// ctci javascript
-// JS Algos
-// stackhouse
-
 // CTCI JS Sol2
 // O(N log N) TIME -- O(1) SPACE
 const sort = str => [...str].sort().join``;
@@ -686,8 +677,19 @@ console.log(
 // );
 
 //results:
-// checkPermutation2 x 348,271 ops/sec ±4.64% (42 runs sampled)
-// checkPermutation3 x 366,723 ops/sec ±4.00% (46 runs sampled)
-// checkPermutation4 x 873,383 ops/sec ±4.52% (44 runs sampled)
-// checkPermutation6 x 958,603 ops/sec ±6.08% (49 runs sampled)
-// Fastest is checkPermutation6
+// checkPermutation1 x 362,757 ops/sec ±1.01% (57 runs sampled)
+// checkPermutation2 x 499,630 ops/sec ±1.30% (61 runs sampled)
+// checkPermutation3 x 534,163 ops/sec ±1.47% (60 runs sampled)
+// checkPermutation4 x 552,475 ops/sec ±2.31% (62 runs sampled)
+// checkPermutation5 x 537,135 ops/sec ±2.74% (61 runs sampled)
+// checkPermutation6 x 435,361 ops/sec ±1.66% (56 runs sampled)
+// checkPermutation7 x 558,742 ops/sec ±2.58% (50 runs sampled)
+// checkPermutation8 x 559,946 ops/sec ±1.28% (54 runs sampled)
+// checkPermutation9 x 1,118,178 ops/sec ±3.08% (53 runs sampled)
+// checkPermutation10 x 1,641,670 ops/sec ±1.40% (52 runs sampled)
+// checkPermutation11 x 1,701,816 ops/sec ±1.30% (55 runs sampled)
+// checkPermutation12 x 1,726,583 ops/sec ±3.28% (53 runs sampled)
+// checkPermutation13 x 2,387,731 ops/sec ±1.84% (53 runs sampled)
+// checkPermutation14 x 2,434,787 ops/sec ±3.04% (52 runs sampled)
+// checkPermutation15 x 2,483,513 ops/sec ±2.35% (51 runs sampled)
+// Fastest is checkPermutation15,checkPermutation14

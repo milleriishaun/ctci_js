@@ -1,6 +1,81 @@
 var Benchmark = require('benchmark');
 var suite = new Benchmark.Suite();
 
+// add tests
+suite
+  .add('isUnique1', function() {
+    isUnique1('striggnp');
+  })
+  .add('isUnique2', function() {
+    isUnique2('striggnp');
+  })
+  .add('isUnique3', function() {
+    isUnique3('striggnp');
+  })
+  .add('isUnique4', function() {
+    isUnique4('striggnp');
+  })
+  .add('isUnique5', function() {
+    isUnique5('striggnp');
+  })
+  .add('isUnique6', function() {
+    isUnique6('striggnp');
+  })
+  .add('isUnique7', function() {
+    isUnique7('striggnp');
+  })
+  .add('isUnique8', function() {
+    isUnique8('striggnp');
+  })
+  .add('isUnique9', function() {
+    isUnique9('striggnp');
+  })
+  .add('isUnique10', function() {
+    isUnique10('striggnp');
+  })
+  .add('isUnique11', function() {
+    isUnique11('striggnp');
+  })
+  .add('isUnique12', function() {
+    isUnique12('striggnp');
+  })
+  .add('isUnique13', function() {
+    isUnique13('striggnp');
+  })
+  .add('isUnique14', function() {
+    isUnique14('striggnp');
+  })
+  .add('isUnique15', function() {
+    isUnique15('striggnp');
+  })
+  .add('isUnique16', function() {
+    isUnique16('striggnp');
+  })
+  .add('isUnique17', function() {
+    isUnique17('striggnp');
+  })
+  .add('isUnique18', function() {
+    isUnique18('striggnp');
+  })
+  // add listeners
+  .on('cycle', function(event) {
+    console.log(String(event.target));
+  })
+  .on('complete', function() {
+    console.log('Fastest is ' + this.filter('fastest').map('name'));
+  })
+  // run async
+  .run({ async: true });
+
+// algos sol
+// CTCI JS Sol
+// ctci
+// CTCI JS
+// CTCI ES5
+// ctci javascript
+// JS Algos
+// stackhouse
+
 // O(N log N) TIME --- O(1) SPACE
 function isUnique1(str) {
   str = str.split``.sort();
@@ -421,75 +496,23 @@ console.log(
 //   isUnique('chirpingmermaid') === false
 // );
 
-// add tests
-suite
-  .add('isUnique1', function() {
-    isUnique1('striggnp');
-  })
-  .add('isUnique2', function() {
-    isUnique2('striggnp');
-  })
-  .add('isUnique3', function() {
-    isUnique3('striggnp');
-  })
-  .add('isUnique4', function() {
-    isUnique4('striggnp');
-  })
-  .add('isUnique5', function() {
-    isUnique5('striggnp');
-  })
-  .add('isUnique6', function() {
-    isUnique6('striggnp');
-  })
-  .add('isUnique7', function() {
-    isUnique7('striggnp');
-  })
-  .add('isUnique8', function() {
-    isUnique8('striggnp');
-  })
-  .add('isUnique9', function() {
-    isUnique9('striggnp');
-  })
-  .add('isUnique10', function() {
-    isUnique10('striggnp');
-  })
-  .add('isUnique11', function() {
-    isUnique11('striggnp');
-  })
-  .add('isUnique12', function() {
-    isUnique12('striggnp');
-  })
-  .add('isUnique13', function() {
-    isUnique13('striggnp');
-  })
-  .add('isUnique14', function() {
-    isUnique14('striggnp');
-  })
-  .add('isUnique15', function() {
-    isUnique15('striggnp');
-  })
-  .add('isUnique16', function() {
-    isUnique16('striggnp');
-  })
-  .add('isUnique17', function() {
-    isUnique17('striggnp');
-  })
-  .add('isUnique18', function() {
-    isUnique18('striggnp');
-  })
-  // add listeners
-  .on('cycle', function(event) {
-    console.log(String(event.target));
-  })
-  .on('complete', function() {
-    console.log('Fastest is ' + this.filter('fastest').map('name'));
-  })
-  // run async
-  .run({ async: true });
-
 //results:
-// isUnique1 x 3,027,277 ops/sec ±8.10% (40 runs sampled)
-// isUnique2 x 2,846,675 ops/sec ±3.22% (49 runs sampled)
-// isUnique3 x 43,106,366 ops/sec ±2.05% (50 runs sampled)
-// isUnique3 x 42,730,280 ops/sec ±2.48% (49 runs sampled)
-// Fastest is isUnique3,isUnique3
+// isUnique1 x 846,857 ops/sec ±2.14% (58 runs sampled)
+// isUnique2 x 966,198 ops/sec ±3.56% (51 runs sampled)
+// isUnique3 x 1,367,941 ops/sec ±2.43% (52 runs sampled)
+// isUnique4 x 1,390,420 ops/sec ±1.77% (53 runs sampled)
+// isUnique5 x 2,001,776 ops/sec ±1.83% (52 runs sampled)
+// isUnique6 x 2,163,475 ops/sec ±1.35% (52 runs sampled)
+// isUnique7 x 2,090,128 ops/sec ±2.45% (53 runs sampled)
+// isUnique8 x 2,970,113 ops/sec ±2.27% (56 runs sampled)
+// isUnique9 x 3,049,962 ops/sec ±1.81% (53 runs sampled)
+// isUnique10 x 3,136,138 ops/sec ±2.28% (52 runs sampled)
+// isUnique11 x 3,125,840 ops/sec ±3.04% (49 runs sampled)
+// isUnique12 x 3,276,093 ops/sec ±1.57% (53 runs sampled)
+// isUnique13 x 3,201,519 ops/sec ±2.06% (56 runs sampled)
+// isUnique14 x 2,915,926 ops/sec ±1.92% (54 runs sampled)
+// isUnique15 x 3,163,697 ops/sec ±4.34% (53 runs sampled)
+// isUnique16 x 3,125,860 ops/sec ±3.75% (48 runs sampled)
+// isUnique17 x 3,702,872 ops/sec ±2.37% (50 runs sampled)
+// isUnique18 x 43,736,497 ops/sec ±2.00% (56 runs sampled)
+// Fastest is isUnique18
