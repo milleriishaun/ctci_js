@@ -1,37 +1,33 @@
 var Benchmark = require('benchmark');
 var suite = new Benchmark.Suite();
 
-/*
 suite
   .add('palindromePermutation1', function() {
-    palindromePermutation1('taco cat');
+    palindromePermutation1('chirpingmermaid');
   })
   .add('palindromePermutation2', function() {
-    palindromePermutation2('taco cat');
+    palindromePermutation2('chirpingmermaid');
   })
   .add('palindromePermutation3', function() {
-    palindromePermutation3('taco cat');
+    palindromePermutation3('chirpingmermaid');
   })
   .add('palindromePermutation4', function() {
-    palindromePermutation4('taco cat');
+    palindromePermutation4('chirpingmermaid');
   })
   .add('palindromePermutation5', function() {
-    palindromePermutation5('taco cat');
+    palindromePermutation5('chirpingmermaid');
   })
   .add('palindromePermutation6', function() {
-    palindromePermutation6('taco cat');
+    palindromePermutation6('chirpingmermaid');
   })
   .add('palindromePermutation7', function() {
-    palindromePermutation7('taco cat');
+    palindromePermutation7('chirpingmermaid');
   })
   .add('palindromePermutation8', function() {
-    palindromePermutation8('taco cat');
+    palindromePermutation8('chirpingmermaid');
   })
   .add('palindromePermutation9', function() {
-    palindromePermutation9('taco cat');
-  })
-  .add('palindromePermutation10', function() {
-    palindromePermutation10('taco cat');
+    palindromePermutation9('chirpingmermaid');
   })
   .on('cycle', function(event) {
     console.log(String(event.target));
@@ -40,9 +36,8 @@ suite
     console.log('Fastest is ' + this.filter('fastest').map('name'));
   })
   .run({ async: true });
-*/
 
-function palindromePermutation2(str) {
+function palindromePermutation1(str) {
   let chars = {};
   let currChar = 0;
   let isPerm = true;
@@ -86,7 +81,7 @@ function palindromePermutation2(str) {
 // space complexity: O(n) ..likely
 
 // from ChirpinmermaidCodes
-let palindromePermutation3 = s => {
+let palindromePermutation2 = s => {
   //if even: then there must be 2 of every character
   //if odd: there must be only one unique char
   //use hash table to store letters
@@ -115,77 +110,8 @@ let palindromePermutation3 = s => {
   }
 };
 
-// algos sol
-// time: O(2n)
-function palindromePermutation4(str) {
-  let table = build_char_frequency(str);
-  return check_odd(table);
-}
-
-function build_char_frequency(str) {
-  let table = {};
-  for (let i = 0; i < str.length; i++) {
-    if (table[str[i]]) {
-      table[str[i]] += 1;
-    } else {
-      table[str[i]] = 1;
-    }
-  }
-  return table;
-}
-
-function check_odd(obj) {
-  let result = false;
-  Object.values(obj).map(count => {
-    if (count % 2 === 0) {
-      result = true;
-    }
-  });
-  return result;
-}
-
-// CTCI JS Sol
-// 0(N) TIME -- O(N) SPACE
-function palindromePermutation5(str) {
-  if (!str) return false;
-
-  str = str.toLowerCase();
-
-  const letterMap = new Set();
-  for (const letter of str) {
-    if (letter !== ' ') {
-      if (letterMap.has(letter)) letterMap.delete(letter);
-      else letterMap.add(letter);
-    }
-  }
-
-  return letterMap.size <= 1;
-}
-
-// ctci
-function palindromePermutation6(str) {
-  if (!str.length) return null;
-
-  const memo = {};
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-    if (!memo[char]) {
-      memo[char] = true;
-    } else {
-      memo[char] = !memo[char];
-    }
-  }
-
-  let count = 0;
-  for (let char in memo) {
-    if (memo[char]) count++;
-  }
-
-  return count <= 1;
-}
-
 // CTCI JS
-var palindromePermutation7 = function(string) {
+var palindromePermutation3 = function(string) {
   // create object literal to store charcount
   var chars = {};
   var currChar;
@@ -216,37 +142,8 @@ var palindromePermutation7 = function(string) {
   return isPerm;
 };
 
-// CTCI ES5
-/**
- * Go through characters in string and set flag to indicate if there is an
- * odd number of that character. If there is more than one character with an
- * odd number of occurences then it cannot be a palindrome.
- *
- * N = |str|
- * Time: O(N)
- * Additional space: O(N)
- */
-function palindromePermutation8(str) {
-  if (!str) {
-    return false;
-  }
-
-  let chars = new Set();
-  for (let char of str) {
-    if (char !== ' ') {
-      if (chars.has(char)) {
-        chars.delete(char);
-      } else {
-        chars.add(char);
-      }
-    }
-  }
-
-  return chars.size <= 1;
-}
-
 // ctci javascript
-function palindromePermutation9(str) {
+function palindromePermutation4(str) {
   // ignore whitespace and case
   const strCopy = str.replace(/[^\w]/g, '').toLowerCase();
 
@@ -266,8 +163,111 @@ function palindromePermutation9(str) {
   return counter < 2;
 }
 
+// algos sol
+// time: O(2n)
+function palindromePermutation5(str) {
+  let table = build_char_frequency(str);
+  let count2 = 0;
+  for (k in table) {
+    if (table[k] % 2 === 1) {
+      count2++;
+    }
+  }
+  if (count2 > 1) {
+    return false;
+  }
+  return check_odd(table);
+}
+
+function build_char_frequency(str) {
+  let table = {};
+  for (let i = 0; i < str.length; i++) {
+    if (table[str[i]]) {
+      table[str[i]] += 1;
+    } else {
+      table[str[i]] = 1;
+    }
+  }
+  return table;
+}
+
+function check_odd(obj) {
+  let result = true;
+  if (Object.values(obj).length > 0) {
+    Object.values(obj).map(count => {
+      if (count !== 1 && count % 2 === 1) {
+        result = false;
+      }
+    });
+  }
+  return result;
+}
+
+// CTCI JS Sol
+// 0(N) TIME -- O(N) SPACE
+function palindromePermutation6(str) {
+  str = str.toLowerCase();
+  const letterMap = new Set();
+  for (const letter of str) {
+    if (letter !== ' ') {
+      if (letterMap.has(letter)) letterMap.delete(letter);
+      else letterMap.add(letter);
+    }
+  }
+
+  return letterMap.size <= 1;
+}
+
+// CTCI ES5
+/**
+ * Go through characters in string and set flag to indicate if there is an
+ * odd number of that character. If there is more than one character with an
+ * odd number of occurences then it cannot be a palindrome.
+ *
+ * N = |str|
+ * Time: O(N)
+ * Additional space: O(N)
+ */
+function palindromePermutation7(str) {
+  let chars = new Set();
+  for (let char of str) {
+    if (char !== ' ') {
+      if (chars.has(char)) {
+        chars.delete(char);
+      } else {
+        chars.add(char);
+      }
+    }
+  }
+
+  return chars.size <= 1;
+}
+// I like how concise and easy to read this code is.
+
+// ctci
+function palindromePermutation8(str) {
+  const memo = {};
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    if (!memo[char]) {
+      memo[char] = true;
+    } else {
+      memo[char] = !memo[char]; //intersting, b/c could have just said false,
+      // but if it was not there, it could be not there under different name?
+    }
+  }
+
+  let count = 0;
+  for (let char in memo) {
+    if (memo[char]) count++;
+  }
+
+  return count <= 1;
+}
+// I like the concise use of memo here.
+
 // JS Algos
-var palindromePermutation10 = function(str) {
+var palindromePermutation9 = function(str) {
   var hash = {};
   for (var i = 0; i < str.length; i++) {
     var ele = str[i];
@@ -288,6 +288,7 @@ var palindromePermutation10 = function(str) {
   }
   return true;
 };
+// this is most explicable code
 
 /*
 // try 1 (needed help w/finding permutations b/c forgot recursion gets n!)
@@ -383,17 +384,17 @@ function createBitVector(str) {
 }
 */
 
-// console.log(
-//   palindromePermutation1('taco cat') === true,
-//   palindromePermutation1('atco cat') === true,
-//   palindromePermutation1(' rac ecar rara ') === true,
-//   palindromePermutation1('aabbc') === true,
-//   palindromePermutation1('aaaabbbbcc') === true,
-//   palindromePermutation1('') === true,
-//   palindromePermutation1('chirpingmermaid') === false,
-//   palindromePermutation1('aabc') === false,
-//   palindromePermutation1('aabccc') === false
-// );
+console.log(
+  palindromePermutation1('taco cat') === true,
+  palindromePermutation1('atco cat') === true,
+  palindromePermutation1(' rac ecar rara ') === true,
+  palindromePermutation1('aabbc') === true,
+  palindromePermutation1('aaaabbbbcc') === true,
+  palindromePermutation1('') === true,
+  palindromePermutation1('chirpingmermaid') === false,
+  palindromePermutation1('aabc') === false,
+  palindromePermutation1('aabccc') === false
+);
 
 console.log(
   palindromePermutation2('taco cat') === true,
@@ -491,32 +492,26 @@ console.log(
   palindromePermutation9('aabccc') === false
 );
 
-console.log(
-  palindromePermutation10('taco cat') === true,
-  palindromePermutation10('atco cat') === true,
-  palindromePermutation10(' rac ecar rara ') === true,
-  palindromePermutation10('aabbc') === true,
-  palindromePermutation10('aaaabbbbcc') === true,
-  palindromePermutation10('') === true,
-  palindromePermutation10('chirpingmermaid') === false,
-  palindromePermutation10('aabc') === false,
-  palindromePermutation10('aabccc') === false
-);
-
 // console.log(
-//   palindromePermutation11('taco cat') === true,
-//   palindromePermutation11('atco cat') === true,
-//   palindromePermutation11(' rac ecar rara ') === true,
-//   palindromePermutation11('aabbc') === true,
-//   palindromePermutation11('aaaabbbbcc') === true,
-//   palindromePermutation11('') === true,
-//   palindromePermutation11('chirpingmermaid') === false,
-//   palindromePermutation11('aabc') === false,
-//   palindromePermutation11('aabccc') === false
+//   palindromePermutation10('taco cat') === true,
+//   palindromePermutation10('atco cat') === true,
+//   palindromePermutation10(' rac ecar rara ') === true,
+//   palindromePermutation10('aabbc') === true,
+//   palindromePermutation10('aaaabbbbcc') === true,
+//   palindromePermutation10('') === true,
+//   palindromePermutation10('chirpingmermaid') === false,
+//   palindromePermutation10('aabc') === false,
+//   palindromePermutation10('aabccc') === false
 // );
 
-// results:
-// palindromePermutation1 x 33,795 ops/sec ±3.76% (48 runs sampled)
-// palindromePermutation2 x 664,872 ops/sec ±1.39% (50 runs sampled)
-// palindromePermutation4 x 862,641 ops/sec ±3.78% (48 runs sampled)
-// Fastest is palindromePermutation4
+// results: // the false taco cats don't matter because testing non-spaced
+// palindromePermutation1 x 579,073 ops/sec ±1.79% (54 runs sampled)
+// palindromePermutation2 x 539,368 ops/sec ±5.09% (57 runs sampled)
+// palindromePermutation3 x 617,638 ops/sec ±1.45% (59 runs sampled)
+// palindromePermutation4 x 718,195 ops/sec ±1.37% (58 runs sampled)
+// palindromePermutation5 x 861,754 ops/sec ±1.51% (59 runs sampled)
+// palindromePermutation6 x 993,237 ops/sec ±1.30% (63 runs sampled)
+// palindromePermutation7 x 1,044,113 ops/sec ±0.90% (63 runs sampled)
+// palindromePermutation8 x 1,240,968 ops/sec ±1.95% (59 runs sampled)
+// palindromePermutation9 x 1,303,385 ops/sec ±1.74% (60 runs sampled)
+// Fastest is palindromePermutation9

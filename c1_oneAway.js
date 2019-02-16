@@ -357,9 +357,13 @@ console.log(
 //   oneAway8('pale', 'bale') === true,
 //   oneAway8('pale', 'bake') === false
 // );
-// console.log(
-//   oneAway9('pale', 'ple') === true,
-//   oneAway9('pales', 'pale') === true,
-//   oneAway9('pale', 'bale') === true,
-//   oneAway9('pale', 'bake') === false
-// );
+
+// results
+// oneAway1 x 2,824,249 ops/sec ±1.63% (60 runs sampled)
+// oneAway2 x 14,409,750 ops/sec ±1.24% (63 runs sampled)
+// oneAway3 x 29,297,268 ops/sec ±0.77% (62 runs sampled)
+// oneAway4 x 30,000,166 ops/sec ±0.92% (58 runs sampled)
+// oneAway5 x 30,786,356 ops/sec ±1.64% (59 runs sampled)
+// oneAway6 x 29,525,998 ops/sec ±1.41% (59 runs sampled)
+// oneAway7 x 75,373,449 ops/sec ±1.30% (58 runs sampled)
+// Fastest is oneAway7
