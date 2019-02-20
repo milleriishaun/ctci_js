@@ -357,12 +357,7 @@ console.log(
 //   oneAway8('pale', 'bale') === true,
 //   oneAway8('pale', 'bake') === false
 // );
-// console.log(
-//   oneAway8('pale', 'ple') === true,
-//   oneAway8('pales', 'pale') === true,
-//   oneAway8('pale', 'bale') === true,
-//   oneAway8('pale', 'bake') === false
-// );
+
 // results
 // oneAway1 x 2,824,249 ops/sec ±1.63% (60 runs sampled)
 // oneAway2 x 14,409,750 ops/sec ±1.24% (63 runs sampled)
