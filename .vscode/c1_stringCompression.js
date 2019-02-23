@@ -80,8 +80,8 @@ suite
 // Space complexity: O(n)
 
 // Try 1
-// time:
-// space:
+// time: O()
+// space: O()
 
 // algos sol
 // CTCI JS Sol
