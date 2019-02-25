@@ -23,6 +23,12 @@ suite
   .add('oneAway7', function() {
     oneAway7('pale', 'bale');
   })
+  .add('oneAway8', function() {
+    oneAway8('pale', 'bale');
+  })
+  .add('oneAway9', function() {
+    oneAway9('pale', 'bale');
+  })
   .on('cycle', function(event) {
     console.log(String(event.target));
   })
@@ -83,8 +89,77 @@ function oneAway1(s1, s2) {
   return true;
 }
 
+/**
+ * ONE AWAY
+ *
+ * I: 2 strings
+ * O: boolean
+ * C: optimize
+ * E: empty string
+ */
+
+// time complexity: O(n) ... the longest string
+// space complexity: O(n) ... not many vars... constant, and
+// doesn't depend on the length of the string.
+
+// ChirpingmermaidCodes1
+// PseudoCode
+// If insert, then s1's churrent char should match s2's next
+// char, if s2 is the longer string.
+// If remove, then s1s next char should match s2's current
+// char.
+// If replaced, then s1's current char should match s2's next
+// char.
+
+// max one edit
+// if diff in lengths is greater then max edit, return false
+
+// iterate through stings at the same time, checking for
+// differences.
+// store maxLength for the forloop condition.
+// - On each iteration, check for differences, then decrement
+// the number of edits,and if it drops below 0, then return
+// false.
+
+// If everything passes and loop is done, then return true.
+
+let oneAway2 = (s1, s2) => {
+  let edits = 1;
+  let maxLen = Math.max(s1.length, s2.length);
+  let diff = Math.abs(s1.length - s2.length);
+
+  if (diff > edits) {
+    return false;
+  }
+
+  // We will have two indices in the forloop.
+  // Keep iterating until the greater of the two finishes.
+  // so just say, if either are true, then we're not done yet.
+  for (let i = 0, j = 0; i < maxLen || j < maxLen; i++, j++) {
+    let c1 = s1[i];
+    let c2 = s2[j];
+
+    if (c1 !== c2) {
+      edits--;
+      if (edits < 0) {
+        return false;
+      }
+      // Where we look at insert, remove, and replace
+      if (c1 === s2[j + 1]) {
+        // inserted (if replaced, same as inserted, in terms of edits)
+        j++;
+      } else if (s1[i + 1] === c2) {
+        //removed
+        i++;
+      }
+    }
+  }
+
+  return true;
+};
+
 // ctci javascript
-function oneAway2(left, right) {
+function oneAway3(left, right) {
   // lengths differ by more than one?
   if (Math.abs(left.length - right.length) > 1) {
     return false;
@@ -114,8 +189,45 @@ function oneAway2(left, right) {
   return true;
 }
 
+// ChirpingmermaidCodes2
+// time complexity: O(n)
+// space complexity: O(n)
+let oneAway4 = (s1, s2) => {
+  let edits = 1;
+  let long = s1.length > s2.length ? s1 : s2;
+  let short = s1.length <= s2.length ? s1 : s2;
+
+  let maxLen = Math.max(s1.length, s2.length);
+  let diff = long.length - short.length;
+
+  if (diff > edits) {
+    return false;
+  }
+
+  // We will have two indices in the forloop.
+  // Keep iterating until the greater of the two finishes.
+  // so just say, if either are true, then we're not done yet.
+  for (let i = 0, j = 0; i < maxLen || j < maxLen; i++, j++) {
+    let c1 = long[i];
+    let c2 = short[j];
+
+    if (c1 !== c2) {
+      edits--;
+      if (edits < 0) {
+        return false;
+      }
+      // inserted or removed
+      if (long[i + 1] === c2) {
+        i++;
+      }
+    }
+  }
+
+  return true;
+};
+
 // CTCI-Javascript
-var oneAway3 = function(string1, string2) {
+var oneAway5 = function(string1, string2) {
   // insert a char for str1 -> remove a char for str2
   var checkOneMissing = function(first, second) {
     if (first.length !== second.length - 1) {
@@ -178,7 +290,7 @@ var oneAway3 = function(string1, string2) {
 };
 
 //CTCI JS Sols
-function oneAway4(str1, str2) {
+function oneAway6(str1, str2) {
   const str1Length = str1.length,
     str2Length = str2.length;
 
@@ -204,7 +316,7 @@ function oneAway4(str1, str2) {
 }
 
 // ctci
-function oneAway5(a, b) {
+function oneAway7(a, b) {
   if (!a.length || !b.length) return null;
   if (Math.abs(a.length - b.length) > 1) return false;
 
@@ -245,7 +357,7 @@ function insert(a, b) {
 }
 
 // CTCI ES5
-function oneAway6(str1, str2) {
+function oneAway8(str1, str2) {
   // if lengths differ by more than 1 then can't be true
   if (Math.abs(str1.length - str2.length) > 1) {
     return false;
@@ -272,7 +384,7 @@ function oneAway6(str1, str2) {
 }
 
 // stackhouse
-function oneAway7(s1, s2) {
+function oneAway9(s1, s2) {
   // Cracking the Coding Interview 1.5
   // There are three types of edits that can be performed on strings: insert a character, remove a
   // character, or replace a character. Given two strings, write a function to check if they are one
@@ -351,19 +463,33 @@ console.log(
   oneAway7('pale', 'bale') === true,
   oneAway7('pale', 'bake') === false
 );
+console.log(
+  oneAway8('pale', 'ple') === true,
+  oneAway8('pales', 'pale') === true,
+  oneAway8('pale', 'bale') === true,
+  oneAway8('pale', 'bake') === false
+);
+console.log(
+  oneAway9('pale', 'ple') === true,
+  oneAway9('pales', 'pale') === true,
+  oneAway9('pale', 'bale') === true,
+  oneAway9('pale', 'bake') === false
+);
 // console.log(
-//   oneAway8('pale', 'ple') === true,
-//   oneAway8('pales', 'pale') === true,
-//   oneAway8('pale', 'bale') === true,
-//   oneAway8('pale', 'bake') === false
+//   oneAway10('pale', 'ple') === true,
+//   oneAway10('pales', 'pale') === true,
+//   oneAway10('pale', 'bale') === true,
+//   oneAway10('pale', 'bake') === false
 // );
 
 // results
-// oneAway1 x 2,824,249 ops/sec ±1.63% (60 runs sampled)
-// oneAway2 x 14,409,750 ops/sec ±1.24% (63 runs sampled)
-// oneAway3 x 29,297,268 ops/sec ±0.77% (62 runs sampled)
-// oneAway4 x 30,000,166 ops/sec ±0.92% (58 runs sampled)
-// oneAway5 x 30,786,356 ops/sec ±1.64% (59 runs sampled)
-// oneAway6 x 29,525,998 ops/sec ±1.41% (59 runs sampled)
-// oneAway7 x 75,373,449 ops/sec ±1.30% (58 runs sampled)
-// Fastest is oneAway7
+// oneAway1 x 1,961,166 ops/sec ±3.33% (47 runs sampled)
+// oneAway2 x 10,773,908 ops/sec ±1.03% (50 runs sampled)
+// oneAway3 x 10,033,913 ops/sec ±2.38% (52 runs sampled)
+// oneAway4 x 11,600,783 ops/sec ±4.03% (47 runs sampled)
+// oneAway5 x 19,917,695 ops/sec ±4.08% (52 runs sampled)
+// oneAway6 x 20,508,817 ops/sec ±2.49% (49 runs sampled)
+// oneAway7 x 21,357,260 ops/sec ±2.08% (50 runs sampled)
+// oneAway8 x 20,681,569 ops/sec ±1.84% (52 runs sampled)
+// oneAway9 x 51,764,699 ops/sec ±2.72% (47 runs sampled)
+// Fastest is oneAway9
