@@ -419,3 +419,5 @@ console.log(
 // stringCompression10 x 3,623,724 ops/sec ±2.38% (47 runs sampled)
 // stringCompression11 x 3,873,867 ops/sec ±2.98% (48 runs sampled)
 // Fastest is stringCompression11
+
+// Note: String concatenation is O(xn^2), where x is length of string.
