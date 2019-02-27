@@ -147,7 +147,8 @@ function zeroMatrix3(matrix) {
       col = coord[1];
     matrix[row].forEach((cell, index) => (matrix[row][index] = 0));
 
-    // Going through each row again to check for column even though column will have changed when the row it's in changed
+    // Going through each row again to check for column even though column
+    // will have changed when the row it's in changed
     matrix.forEach(rowArr => (rowArr[col] = 0));
   });
 
