@@ -1,3 +1,7 @@
+// CTCI JS
+// ctci
+// stackhouse
+// CTCI JS Sol
 var Benchmark = require('benchmark');
 var suite = new Benchmark.Suite();
 
@@ -70,7 +74,7 @@ suite
   */
 
 // algos sol (ok for chap2)
-// CTCI JS Sol (ok for chap2)
+// CTCI JS Sol (good for chap2, checks off stackhouse sometimes)
 // ctci  (really good for chap2)
 // CTCI JS (really good for chap2, but slightly older)
 // CTCI ES5 (ok for chap2)
@@ -80,93 +84,94 @@ suite
 // Determined to use CTCI JS, ctci, and stackhouse, since their direction is clearer.
 // Good to check JS Algos every so often.
 
-// CTCI JS
-/* CLASS */
-var LinkedList = function(value) {
-  this.value = value;
-  this.next = null;
-};
+// // CTCI JS
+// /* CLASS */
+// var LinkedList = function(value) {
+//   this.value = value;
+//   this.next = null;
+// };
 
-/* FUNCTIONS */
-var checkDups = function(head, node) {
-  var currNode = head;
-  while (currNode !== node) {
-    if (currNode.value === node.value) {
-      return true;
-    }
-    currNode = currNode.next;
-  }
-  return false;
-};
+// /* FUNCTIONS */
+// var checkDups = function(head, node) {
+//   var currNode = head;
+//   while (currNode !== node) {
+//     if (currNode.value === node.value) {
+//       return true;
+//     }
+//     currNode = currNode.next;
+//   }
+//   return false;
+// };
 
-var printLinkedList = function(head) {
-  var node = head;
-  console.log('start of linked list');
-  while (node !== null) {
-    console.log(node.value);
-    node = node.next;
-  }
-  console.log('end of linked list');
-};
+// var printLinkedList = function(head) {
+//   var node = head;
+//   console.log('start of linked list');
+//   while (node !== null) {
+//     console.log(node.value);
+//     node = node.next;
+//   }
+//   console.log('end of linked list');
+// };
 
-var removeDups = function(head) {
-  var node = head;
-  while (node !== null) {
-    if (node.next !== null && checkDups(head, node.next)) {
-      node.next = node.next.next;
-    } else {
-      node = node.next;
-    }
-  }
-  return head;
-};
+// var removeDups = function(head) {
+//   var node = head;
+//   while (node !== null) {
+//     if (node.next !== null && checkDups(head, node.next)) {
+//       node.next = node.next.next;
+//     } else {
+//       node = node.next;
+//     }
+//   }
+//   return head;
+// };
 
-/* TESTS */
-var a = new LinkedList('a');
-var b = new LinkedList('b');
-var c = new LinkedList('c');
-var d = new LinkedList('d');
-var e = new LinkedList('e');
+// /* TESTS */
+// var a = new LinkedList('a');
+// var b = new LinkedList('b');
+// var c = new LinkedList('c');
+// var d = new LinkedList('d');
+// var e = new LinkedList('e');
 
-a.next = b;
-b.next = c;
-c.next = d;
-d.next = e;
+// a.next = b;
+// b.next = c;
+// c.next = d;
+// d.next = e;
 
-removeDups(a);
-printLinkedList(a);
+// removeDups(a);
+// printLinkedList(a);
 
-var f = new LinkedList('f');
-var g = new LinkedList('g');
-var h = new LinkedList('g');
-var i = new LinkedList('g');
-var j = new LinkedList('g');
+// var f = new LinkedList('f');
+// var g = new LinkedList('g');
+// var h = new LinkedList('g');
+// var i = new LinkedList('g');
+// var j = new LinkedList('g');
 
-f.next = g;
-g.next = h;
-h.next = i;
-i.next = j;
+// f.next = g;
+// g.next = h;
+// h.next = i;
+// i.next = j;
 
-removeDups(f);
-printLinkedList(f);
+// removeDups(f);
+// printLinkedList(f);
 
-var k = new LinkedList('g');
-var l = new LinkedList('g');
-var m = new LinkedList('g');
-var n = new LinkedList('b');
-var o = new LinkedList('g');
+// var k = new LinkedList('g');
+// var l = new LinkedList('g');
+// var m = new LinkedList('g');
+// var n = new LinkedList('b');
+// var o = new LinkedList('g');
 
-k.next = l;
-l.next = m;
-m.next = n;
-n.next = o;
+// k.next = l;
+// l.next = m;
+// m.next = n;
+// n.next = o;
 
-removeDups(k);
-printLinkedList(k);
+// removeDups(k);
+// printLinkedList(k);
 
 // ctci
-const List = require('.c2_List.js');
+const List = require('./c2_List.js');
 
+// This uses memoization, which may increase speed of evaluation.
 function removeDups(list) {
   const memo = {};
   let current = list.head;
@@ -198,6 +203,7 @@ console.log('===========');
 removeDups(l);
 l.print();
 
+/*
 // stackhouse
 function remove_dupes(list) {
   // Cracking the Coding Interview problem 2.1
@@ -221,3 +227,46 @@ function remove_dupes(list) {
   }
   return list;
 }
+*/
+
+/*
+// CTCI JS
+// O(N) TIME --- O(N) SPACE
+
+function removeDupes1(list) {
+  if (!list || !list.next) return list;
+
+  const set = new Set();
+  set.add(list.value);
+
+  while (list.next) {
+    if (set.has(list.next.value)) {
+      list.next = list.next.next;
+    } else {
+      set.add(list.next.value);
+      list = list.next;
+    }
+  }
+
+}
+// |---~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~---|
+
+// O(Nˆ2) TIME --- O(1) SPACE
+
+function removeDupes2(head) {
+  if (!head || !head.next) return head;
+
+  while (head) {
+    let current = head;
+    while (current.next) {
+      if (current.next.value === head.value) {
+        current.next = current.next.next;
+      } else {
+        current = current.next;
+      }
+    }
+    head = head.next;
+  }
+
+}
+*/
