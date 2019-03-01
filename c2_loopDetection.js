@@ -89,7 +89,7 @@ l.add(7);
 l.find(7).next = l.find(3);
 console.log(cycle(l));
 
-// stackhouse ... blank
+// stackhouse ... (blank)
 
 /*
 // CTCI JS Sol
