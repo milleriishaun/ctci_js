@@ -138,7 +138,8 @@ function circularList1(list) {
 
 // |---~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~---|
 
-// THIS ONLY DEDECTS A CIRCULAR LIST AND RETURNS WHERE THE POINTERS COLLIDE. DOESN'T RETURN THE BEGINNING OF THE LOOP.
+// THIS ONLY DETECTS A CIRCULAR LIST AND RETURNS WHERE THE POINTERS
+// COLLIDE. DOESN'T RETURN THE BEGINNING OF THE LOOP.
 // O(N) TIME -- O(1) SPACE
 function circularList2(list) {
   if (!list || !list.next) return null;
