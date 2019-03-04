@@ -31,7 +31,7 @@ suite
   */
 
 // ctci (modern w/ readability, missing 3inOne but organized, best for c3)
-// algo sol (2nd Best for c3, clear formatting, only 10 months old)
+// algo sol (2nd Best for c3, missing animalShelter clear format, <10 months old)
 // CTCI JS (good full c3, with DataStructures clearly shown)
 // CTCI JS Sol (great for c3, uses 'this' so has multiple applications)
 // CTCI ES5 (useful c3 even though 3 years old, very concise and well-described)
