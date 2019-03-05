@@ -137,6 +137,7 @@ s1.pop();
 s1.pop();
 s1.pop();
 s1.pop();
+// idk how this tests the actual myQueue.
 
 // // CTCI JS
 // var Stack = require('./../util/Stack');

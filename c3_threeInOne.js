@@ -252,10 +252,9 @@ q1.print();
 // console.log(d1, d2, d3);
 // console.log(isEmptyb1, isEmptyb2, isEmptyb3);
 
-/*
 // CTCI JS Sol1
 // STACK SIZE IS DYNAMIC
-export class TripleStack {
+class TripleStack {
   constructor() {
     this._stack = [];
     this._stackLengths = [0, 0, 0];
@@ -298,7 +297,6 @@ export class TripleStack {
   isEmpty(stackNum) {
     return this._getLength(stackNum) === 0;
   }
-
 }
 
 // CTCI JS Sol2
@@ -314,7 +312,7 @@ class FixedMultiStack {
 
   _indexOfTop(stackNum) {
     const offset = (stackNum - 1) * this._stackCapacity,
-          size = this._sizes[stackNum - 1];
+      size = this._sizes[stackNum - 1];
     return offset + size - 1;
   }
 
@@ -325,10 +323,11 @@ class FixedMultiStack {
   }
 
   pop(stackNum) {
-    if (this.isEmpty(stackNum)) throw Error(`Stack number ${stackNum} is empty`);
+    if (this.isEmpty(stackNum))
+      throw Error(`Stack number ${stackNum} is empty`);
 
     const topIndex = this._indexOfTop(stackNum),
-          value = this._values[topIndex];
+      value = this._values[topIndex];
 
     this._values[topIndex] = undefined;
     this._sizes[stackNum - 1]--;
@@ -346,9 +345,57 @@ class FixedMultiStack {
   isFull(stackNum) {
     return this._sizes[stackNum - 1] === this._stackCapacity;
   }
-
 }
-*/
+
+// Failing Tests(improvised to understand dynamic sized array input)
+
+var t = new TripleStack();
+t.push('1');
+t.push('2');
+t.push('3');
+t.push('4');
+t.push('5');
+t.push('6');
+t.push('7');
+t.push('8');
+t.push('9');
+
+var a1 = t.pop();
+var a2 = t.pop();
+var a3 = t.pop();
+
+var peek1 = t.peek();
+var peek2 = t.peek();
+var peek3 = t.peek();
+
+var b1 = t.pop();
+var b2 = t.pop();
+var b3 = t.pop();
+
+var isEmptya1 = t.isEmpty();
+var isEmptya2 = t.isEmpty();
+var isEmptya3 = t.isEmpty();
+
+var c1 = t.pop();
+var c2 = t.pop();
+var c3 = t.pop();
+
+var d1 = t.pop();
+var d2 = t.pop();
+var d3 = t.pop();
+
+var isEmptyb1 = t.isEmpty();
+var isEmptyb2 = t.isEmpty();
+var isEmptyb3 = t.isEmpty();
+
+console.log(t.stack, t.stackLengths);
+console.log(a1, a2, a3);
+console.log(peek1, peek2, peek3);
+console.log(b1, b2, b3);
+console.log(isEmptya1, isEmptya2, isEmptya3);
+console.log(c1, c2, c3);
+console.log(d1, d2, d3);
+console.log(isEmptyb1, isEmptyb2, isEmptyb3);
 
 // CTCI ES5
 /**
