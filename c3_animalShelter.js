@@ -102,7 +102,7 @@ s.enqueue({ type: 'cat', name: 'sylvester' });
 console.log(s.dequeueAny().name);
 console.log(s.dequeueCat().name);
 console.log(s.dequeueDog().name);
-// belisimo
+// bellissimo
 
 // algo sol ... none available
 

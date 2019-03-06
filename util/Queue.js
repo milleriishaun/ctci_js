@@ -1,5 +1,5 @@
 // implement a queue using linkedLists
-var LinkedList = require('./LinkedList');
+var LinkedList = require('./LinkedList.1.js');
 
 var Queue = function() {
   this.front = null;
