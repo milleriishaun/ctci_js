@@ -48,7 +48,7 @@ suite
 // Try 1
 // Time complexity: O(n)
 // Space complexity: O(n)
-// debug time:  mins. // fail
+// debug time:  mins. // fails b/c strings immutable
 
 function insertion(N, M, i, j) {
   // exceptions
