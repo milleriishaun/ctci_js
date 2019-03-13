@@ -93,7 +93,8 @@ function convertNumToSet(x, set) {
   return subset;
 }
 
-// algo sol // this one is broken with all the null values in the arr
+// algo sol // this one was broken with all the null values in the arr, until
+// I fixed it by putting in some FP.
 // https://www.geeksforgeeks.org/finding-all-subsets-of-a-given-set-in-java/
 // This is more direct
 // https://www.youtube.com/watch?v=bGC2fNALbNU
