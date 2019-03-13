@@ -35,7 +35,7 @@ suite
   .run({ async: true });
 
 // CTCI JS (good full c8, with time and space clearly shown)
-// CTCI JS Sol (great full c8, has multiple applications, time and space)
+// CTCI JS Sol (almost full c8, q:13,14 missing, has multiple applications, time and space)
 // algo sol (2nd Best for c3, missing q:6,13,14, clear format, <10 months old)
 // stackhouse (only q:1345)
 
