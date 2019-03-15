@@ -112,7 +112,7 @@ f.left = i;
 i.parent = f;
 f.right = j;
 j.parent = f;
-
+//
 console.log(firstCommonAncestor(g, k), 'd');
 console.log(firstCommonAncestor(b, i), 'a');
 
