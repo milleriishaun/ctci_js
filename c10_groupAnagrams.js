@@ -147,7 +147,7 @@ const anagramsSorted = [
 //   ])
 // ); // yeah, it actually worked in organizing, but I don't think this is an anagram
 console.log(groupAnagrams1(anagrams));
-console.log(groupAnagrams2(anagrams));
+console.log(groupAnagrams2(anagrams)); // edit
 
 // // results:
 // groupAnagrams1 x 29,436 ops/sec ±4.12% (48 runs sampled)
