@@ -58,11 +58,5 @@
 // Try 1 //
 
 console.log(sortedMerge(5));
-console.log(sortedMerge(5));
-console.log(sortedMerge(5));
-console.log(sortedMerge(5));
-console.log(sortedMerge(5));
-console.log(sortedMerge(5));
-console.log(sortedMerge(5));
 
 // results:
