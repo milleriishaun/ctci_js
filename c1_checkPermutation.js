@@ -446,6 +446,7 @@ function checkPermutation15(a, b) {
   }
 
   return true;
+  
 }
 
 /*
