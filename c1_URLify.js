@@ -1,44 +1,44 @@
-var Benchmark = require('benchmark');
-var suite = new Benchmark.Suite();
+// var Benchmark = require('benchmark');
+// var suite = new Benchmark.Suite();
 
-suite
-  .add('URLify1', function() {
-    URLify1('Mr John Smith ', 13);
-  })
-  .add('URLify2', function() {
-    URLify2('Mr John Smith ', 13);
-  })
-  .add('URLify3', function() {
-    URLify3('Mr John Smith ', 13);
-  })
-  .add('URLify4', function() {
-    URLify4('Mr John Smith ', 13);
-  })
-  .add('URLify5', function() {
-    URLify5('Mr John Smith ', 13);
-  })
-  .add('URLify6', function() {
-    URLify6('Mr John Smith ', 13);
-  })
-  .add('URLify7', function() {
-    URLify7('Mr John Smith ', 13);
-  })
-  .add('URLify8', function() {
-    URLify8('Mr John Smith ', 13);
-  })
-  .add('URLify9', function() {
-    URLify9('Mr John Smith ', 13);
-  })
-  .add('URLify10', function() {
-    URLify10('Mr John Smith ', 13);
-  })
-  .on('cycle', function(event) {
-    console.log(String(event.target));
-  })
-  .on('complete', function() {
-    console.log('Fastest is ' + this.filter('fastest').map('name'));
-  })
-  .run({ async: true });
+// suite
+//   .add('URLify1', function() {
+//     URLify1('Mr John Smith ', 13);
+//   })
+//   .add('URLify2', function() {
+//     URLify2('Mr John Smith ', 13);
+//   })
+//   .add('URLify3', function() {
+//     URLify3('Mr John Smith ', 13);
+//   })
+//   .add('URLify4', function() {
+//     URLify4('Mr John Smith ', 13);
+//   })
+//   .add('URLify5', function() {
+//     URLify5('Mr John Smith ', 13);
+//   })
+//   .add('URLify6', function() {
+//     URLify6('Mr John Smith ', 13);
+//   })
+//   .add('URLify7', function() {
+//     URLify7('Mr John Smith ', 13);
+//   })
+//   .add('URLify8', function() {
+//     URLify8('Mr John Smith ', 13);
+//   })
+//   .add('URLify9', function() {
+//     URLify9('Mr John Smith ', 13);
+//   })
+//   .add('URLify10', function() {
+//     URLify10('Mr John Smith ', 13);
+//   })
+//   .on('cycle', function(event) {
+//     console.log(String(event.target));
+//   })
+//   .on('complete', function() {
+//     console.log('Fastest is ' + this.filter('fastest').map('name'));
+//   })
+//   .run({ async: true });
 
 // CTCI ES5
 /**
@@ -184,7 +184,7 @@ let URLify8 = (s, n = s.length) => {
       out += c;
     }
   }
-  // if n is not yet reached nad there are still spaces left
+  // if n is not yet reached and there are still spaces left
   while (spaces > 0) {
     out += '%20';
     spaces--;
@@ -271,25 +271,25 @@ function URLifyX2(character_array, actual_length) {
 }
 */
 
-console.log(URLify1('Mr John Smith ', 13) === 'Mr%20John%20Smith');
+// console.log(URLify1('Mr John Smith ', 13) === 'Mr%20John%20Smith');
 
-console.log(URLify2('Mr John Smith ', 13) === 'Mr%20John%20Smith');
+// console.log(URLify2('Mr John Smith ', 13) === 'Mr%20John%20Smith');
 
-console.log(URLify3('Mr John Smith ', 13) === 'Mr%20John%20Smith');
+// console.log(URLify3('Mr John Smith ', 13) === 'Mr%20John%20Smith');
 
-console.log(URLify4('Mr John Smith ', 13) === 'Mr%20John%20Smith');
+// console.log(URLify4('Mr John Smith ', 13) === 'Mr%20John%20Smith');
 
-console.log(URLify5('Mr John Smith ', 13) === 'Mr%20John%20Smith');
+// console.log(URLify5('Mr John Smith ', 13) === 'Mr%20John%20Smith');
 
-console.log(URLify6('Mr John Smith ', 13) === 'Mr%20John%20Smith');
+// console.log(URLify6('Mr John Smith ', 13) === 'Mr%20John%20Smith');
 
-console.log(URLify7('Mr John Smith ', 13) === 'Mr%20John%20Smith');
+// console.log(URLify7('Mr John Smith ', 13) === 'Mr%20John%20Smith');
 
-console.log(URLify8('Mr John Smith ', 13) === 'Mr%20John%20Smith');
+// console.log(URLify8('Mr John Smith ', 13) === 'Mr%20John%20Smith');
 
-console.log(URLify9('Mr John Smith ', 13) === 'Mr%20John%20Smith');
+// console.log(URLify9('Mr John Smith ', 13) === 'Mr%20John%20Smith');
 
-console.log(URLify10('Mr John Smith ', 13) === 'Mr%20John%20Smith');
+// console.log(URLify10('Mr John Smith ', 13) === 'Mr%20John%20Smith');
 
 // console.log(
 //   URLify15('Mr John Smith ', 13) === 'Mr%20John%20Smith',
@@ -313,3 +313,9 @@ console.log(URLify10('Mr John Smith ', 13) === 'Mr%20John%20Smith');
 // URLify9 x 2,715,016 ops/sec ±3.04% (51 runs sampled)
 // URLify10 x 3,848,792 ops/sec ±0.95% (54 runs sampled)
 // Fastest is URLify10
+
+// Practice list:
+// 1. 10 ...clean code
+// 2. 7 ... ES5 regex(2 FP calls)
+// 3. 8 chirpingmermaids, O(2n), O(1)... messy error-prone code
+// 4. 9 ... ES6 regex(2 FP calls) and 1 conditional

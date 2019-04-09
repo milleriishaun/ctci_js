@@ -1,41 +1,41 @@
-var Benchmark = require('benchmark');
-var suite = new Benchmark.Suite();
+// var Benchmark = require('benchmark');
+// var suite = new Benchmark.Suite();
 
-suite
-  .add('palindromePermutation1', function() {
-    palindromePermutation1('chirpingmermaid');
-  })
-  .add('palindromePermutation2', function() {
-    palindromePermutation2('chirpingmermaid');
-  })
-  .add('palindromePermutation3', function() {
-    palindromePermutation3('chirpingmermaid');
-  })
-  .add('palindromePermutation4', function() {
-    palindromePermutation4('chirpingmermaid');
-  })
-  .add('palindromePermutation5', function() {
-    palindromePermutation5('chirpingmermaid');
-  })
-  .add('palindromePermutation6', function() {
-    palindromePermutation6('chirpingmermaid');
-  })
-  .add('palindromePermutation7', function() {
-    palindromePermutation7('chirpingmermaid');
-  })
-  .add('palindromePermutation8', function() {
-    palindromePermutation8('chirpingmermaid');
-  })
-  .add('palindromePermutation9', function() {
-    palindromePermutation9('chirpingmermaid');
-  })
-  .on('cycle', function(event) {
-    console.log(String(event.target));
-  })
-  .on('complete', function() {
-    console.log('Fastest is ' + this.filter('fastest').map('name'));
-  })
-  .run({ async: true });
+// suite
+//   .add('palindromePermutation1', function() {
+//     palindromePermutation1('chirpingmermaid');
+//   })
+//   .add('palindromePermutation2', function() {
+//     palindromePermutation2('chirpingmermaid');
+//   })
+//   .add('palindromePermutation3', function() {
+//     palindromePermutation3('chirpingmermaid');
+//   })
+//   .add('palindromePermutation4', function() {
+//     palindromePermutation4('chirpingmermaid');
+//   })
+//   .add('palindromePermutation5', function() {
+//     palindromePermutation5('chirpingmermaid');
+//   })
+//   .add('palindromePermutation6', function() {
+//     palindromePermutation6('chirpingmermaid');
+//   })
+//   .add('palindromePermutation7', function() {
+//     palindromePermutation7('chirpingmermaid');
+//   })
+//   .add('palindromePermutation8', function() {
+//     palindromePermutation8('chirpingmermaid');
+//   })
+//   .add('palindromePermutation9', function() {
+//     palindromePermutation9('chirpingmermaid');
+//   })
+//   .on('cycle', function(event) {
+//     console.log(String(event.target));
+//   })
+//   .on('complete', function() {
+//     console.log('Fastest is ' + this.filter('fastest').map('name'));
+//   })
+//   .run({ async: true });
 
 function palindromePermutation1(str) {
   let chars = {};
@@ -384,113 +384,113 @@ function createBitVector(str) {
 }
 */
 
-console.log(
-  palindromePermutation1('taco cat') === true,
-  palindromePermutation1('atco cat') === true,
-  palindromePermutation1(' rac ecar rara ') === true,
-  palindromePermutation1('aabbc') === true,
-  palindromePermutation1('aaaabbbbcc') === true,
-  palindromePermutation1('') === true,
-  palindromePermutation1('chirpingmermaid') === false,
-  palindromePermutation1('aabc') === false,
-  palindromePermutation1('aabccc') === false
-);
+// console.log(
+//   palindromePermutation1('taco cat') === true,
+//   palindromePermutation1('atco cat') === true,
+//   palindromePermutation1(' rac ecar rara ') === true,
+//   palindromePermutation1('aabbc') === true,
+//   palindromePermutation1('aaaabbbbcc') === true,
+//   palindromePermutation1('') === true,
+//   palindromePermutation1('chirpingmermaid') === false,
+//   palindromePermutation1('aabc') === false,
+//   palindromePermutation1('aabccc') === false
+// );
 
-console.log(
-  palindromePermutation2('taco cat') === true,
-  palindromePermutation2('atco cat') === true,
-  palindromePermutation2(' rac ecar rara ') === true,
-  palindromePermutation2('aabbc') === true,
-  palindromePermutation2('aaaabbbbcc') === true,
-  palindromePermutation2('') === true,
-  palindromePermutation2('chirpingmermaid') === false,
-  palindromePermutation2('aabc') === false,
-  palindromePermutation2('aabccc') === false
-);
+// console.log(
+//   palindromePermutation2('taco cat') === true,
+//   palindromePermutation2('atco cat') === true,
+//   palindromePermutation2(' rac ecar rara ') === true,
+//   palindromePermutation2('aabbc') === true,
+//   palindromePermutation2('aaaabbbbcc') === true,
+//   palindromePermutation2('') === true,
+//   palindromePermutation2('chirpingmermaid') === false,
+//   palindromePermutation2('aabc') === false,
+//   palindromePermutation2('aabccc') === false
+// );
 
-console.log(
-  palindromePermutation3('taco cat') === true,
-  palindromePermutation3('atco cat') === true,
-  palindromePermutation3(' rac ecar rara ') === true,
-  palindromePermutation3('aabbc') === true,
-  palindromePermutation3('aaaabbbbcc') === true,
-  palindromePermutation3('') === true,
-  palindromePermutation3('chirpingmermaid') === false,
-  palindromePermutation3('aabc') === false,
-  palindromePermutation3('aabccc') === false
-);
+// console.log(
+//   palindromePermutation3('taco cat') === true,
+//   palindromePermutation3('atco cat') === true,
+//   palindromePermutation3(' rac ecar rara ') === true,
+//   palindromePermutation3('aabbc') === true,
+//   palindromePermutation3('aaaabbbbcc') === true,
+//   palindromePermutation3('') === true,
+//   palindromePermutation3('chirpingmermaid') === false,
+//   palindromePermutation3('aabc') === false,
+//   palindromePermutation3('aabccc') === false
+// );
 
-console.log(
-  palindromePermutation4('taco cat') === true,
-  palindromePermutation4('atco cat') === true,
-  palindromePermutation4(' rac ecar rara ') === true,
-  palindromePermutation4('aabbc') === true,
-  palindromePermutation4('aaaabbbbcc') === true,
-  palindromePermutation4('') === true,
-  palindromePermutation4('chirpingmermaid') === false,
-  palindromePermutation4('aabc') === false,
-  palindromePermutation4('aabccc') === false
-);
+// console.log(
+//   palindromePermutation4('taco cat') === true,
+//   palindromePermutation4('atco cat') === true,
+//   palindromePermutation4(' rac ecar rara ') === true,
+//   palindromePermutation4('aabbc') === true,
+//   palindromePermutation4('aaaabbbbcc') === true,
+//   palindromePermutation4('') === true,
+//   palindromePermutation4('chirpingmermaid') === false,
+//   palindromePermutation4('aabc') === false,
+//   palindromePermutation4('aabccc') === false
+// );
 
-console.log(
-  palindromePermutation5('taco cat') === true,
-  palindromePermutation5('atco cat') === true,
-  palindromePermutation5(' rac ecar rara ') === true,
-  palindromePermutation5('aabbc') === true,
-  palindromePermutation5('aaaabbbbcc') === true,
-  palindromePermutation5('') === true,
-  palindromePermutation5('chirpingmermaid') === false,
-  palindromePermutation5('aabc') === false,
-  palindromePermutation5('aabccc') === false
-);
+// console.log(
+//   palindromePermutation5('taco cat') === true,
+//   palindromePermutation5('atco cat') === true,
+//   palindromePermutation5(' rac ecar rara ') === true,
+//   palindromePermutation5('aabbc') === true,
+//   palindromePermutation5('aaaabbbbcc') === true,
+//   palindromePermutation5('') === true,
+//   palindromePermutation5('chirpingmermaid') === false,
+//   palindromePermutation5('aabc') === false,
+//   palindromePermutation5('aabccc') === false
+// );
 
-console.log(
-  palindromePermutation6('taco cat') === true,
-  palindromePermutation6('atco cat') === true,
-  palindromePermutation6(' rac ecar rara ') === true,
-  palindromePermutation6('aabbc') === true,
-  palindromePermutation6('aaaabbbbcc') === true,
-  palindromePermutation6('') === true,
-  palindromePermutation6('chirpingmermaid') === false,
-  palindromePermutation6('aabc') === false,
-  palindromePermutation6('aabccc') === false
-);
+// console.log(
+//   palindromePermutation6('taco cat') === true,
+//   palindromePermutation6('atco cat') === true,
+//   palindromePermutation6(' rac ecar rara ') === true,
+//   palindromePermutation6('aabbc') === true,
+//   palindromePermutation6('aaaabbbbcc') === true,
+//   palindromePermutation6('') === true,
+//   palindromePermutation6('chirpingmermaid') === false,
+//   palindromePermutation6('aabc') === false,
+//   palindromePermutation6('aabccc') === false
+// );
 
-console.log(
-  palindromePermutation7('taco cat') === true,
-  palindromePermutation7('atco cat') === true,
-  palindromePermutation7(' rac ecar rara ') === true,
-  palindromePermutation7('aabbc') === true,
-  palindromePermutation7('aaaabbbbcc') === true,
-  palindromePermutation7('') === true,
-  palindromePermutation7('chirpingmermaid') === false,
-  palindromePermutation7('aabc') === false,
-  palindromePermutation7('aabccc') === false
-);
+// console.log(
+//   palindromePermutation7('taco cat') === true,
+//   palindromePermutation7('atco cat') === true,
+//   palindromePermutation7(' rac ecar rara ') === true,
+//   palindromePermutation7('aabbc') === true,
+//   palindromePermutation7('aaaabbbbcc') === true,
+//   palindromePermutation7('') === true,
+//   palindromePermutation7('chirpingmermaid') === false,
+//   palindromePermutation7('aabc') === false,
+//   palindromePermutation7('aabccc') === false
+// );
 
-console.log(
-  palindromePermutation8('taco cat') === true,
-  palindromePermutation8('atco cat') === true,
-  palindromePermutation8(' rac ecar rara ') === true,
-  palindromePermutation8('aabbc') === true,
-  palindromePermutation8('aaaabbbbcc') === true,
-  palindromePermutation8('') === true,
-  palindromePermutation8('chirpingmermaid') === false,
-  palindromePermutation8('aabc') === false,
-  palindromePermutation8('aabccc') === false
-);
+// console.log(
+//   palindromePermutation8('taco cat') === true,
+//   palindromePermutation8('atco cat') === true,
+//   palindromePermutation8(' rac ecar rara ') === true,
+//   palindromePermutation8('aabbc') === true,
+//   palindromePermutation8('aaaabbbbcc') === true,
+//   palindromePermutation8('') === true,
+//   palindromePermutation8('chirpingmermaid') === false,
+//   palindromePermutation8('aabc') === false,
+//   palindromePermutation8('aabccc') === false
+// );
 
-console.log(
-  palindromePermutation9('taco cat') === true,
-  palindromePermutation9('atco cat') === true,
-  palindromePermutation9(' rac ecar rara ') === true,
-  palindromePermutation9('aabbc') === true,
-  palindromePermutation9('aaaabbbbcc') === true,
-  palindromePermutation9('') === true,
-  palindromePermutation9('chirpingmermaid') === false,
-  palindromePermutation9('aabc') === false,
-  palindromePermutation9('aabccc') === false
-);
+// console.log(
+//   palindromePermutation9('taco cat') === true,
+//   palindromePermutation9('atco cat') === true,
+//   palindromePermutation9(' rac ecar rara ') === true,
+//   palindromePermutation9('aabbc') === true,
+//   palindromePermutation9('aaaabbbbcc') === true,
+//   palindromePermutation9('') === true,
+//   palindromePermutation9('chirpingmermaid') === false,
+//   palindromePermutation9('aabc') === false,
+//   palindromePermutation9('aabccc') === false
+// );
 
 // console.log(
 //   palindromePermutation10('taco cat') === true,
@@ -515,3 +515,10 @@ console.log(
 // palindromePermutation8 x 1,240,968 ops/sec ±1.95% (59 runs sampled)
 // palindromePermutation9 x 1,303,385 ops/sec ±1.74% (60 runs sampled)
 // Fastest is palindromePermutation9
+
+// Practice list:
+// 1. 9 memo/hash ... clean code
+// 2. 8 memo ... clean code
+// 3. 7 memo, ES5, O(n), O(n), new Set, has delete add
+// 4. 6 new Set, has delete add ... clean code
+// 5. 5 memo, O(2n) time, FP(Object.values and .map), split functions ... scalable

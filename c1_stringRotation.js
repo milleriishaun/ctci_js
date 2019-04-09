@@ -1,44 +1,44 @@
-var Benchmark = require('benchmark');
-var suite = new Benchmark.Suite();
+// var Benchmark = require('benchmark');
+// var suite = new Benchmark.Suite();
 
-// add tests
-suite
-  .add('isRotation1', function() {
-    isRotation1('waterbottle', 'erbottlewat');
-  })
-  .add('isRotation2', function() {
-    isRotation2('waterbottle', 'erbottlewat');
-  })
-  .add('isRotation3', function() {
-    isRotation3('waterbottle', 'erbottlewat');
-  })
-  .add('isRotation4', function() {
-    isRotation4('waterbottle', 'erbottlewat');
-  })
-  .add('isRotation5', function() {
-    isRotation5('waterbottle', 'erbottlewat');
-  })
-  .add('isRotation6', function() {
-    isRotation6('waterbottle', 'erbottlewat');
-  })
-  .add('isRotation7', function() {
-    isRotation7('waterbottle', 'erbottlewat');
-  })
-  .add('isRotation8', function() {
-    isRotation8('waterbottle', 'erbottlewat');
-  })
-  // .add('isRotation9', function() {
-  //   isRotation9('waterbottle', 'erbottlewat');
-  // })
-  // add listeners
-  .on('cycle', function(event) {
-    console.log(String(event.target));
-  })
-  .on('complete', function() {
-    console.log('Fastest is ' + this.filter('fastest').map('name'));
-  })
-  // run async
-  .run({ async: true });
+// // add tests
+// suite
+//   .add('isRotation1', function() {
+//     isRotation1('waterbottle', 'erbottlewat');
+//   })
+//   .add('isRotation2', function() {
+//     isRotation2('waterbottle', 'erbottlewat');
+//   })
+//   .add('isRotation3', function() {
+//     isRotation3('waterbottle', 'erbottlewat');
+//   })
+//   .add('isRotation4', function() {
+//     isRotation4('waterbottle', 'erbottlewat');
+//   })
+//   .add('isRotation5', function() {
+//     isRotation5('waterbottle', 'erbottlewat');
+//   })
+//   .add('isRotation6', function() {
+//     isRotation6('waterbottle', 'erbottlewat');
+//   })
+//   .add('isRotation7', function() {
+//     isRotation7('waterbottle', 'erbottlewat');
+//   })
+//   .add('isRotation8', function() {
+//     isRotation8('waterbottle', 'erbottlewat');
+//   })
+//   // .add('isRotation9', function() {
+//   //   isRotation9('waterbottle', 'erbottlewat');
+//   // })
+//   // add listeners
+//   .on('cycle', function(event) {
+//     console.log(String(event.target));
+//   })
+//   .on('complete', function() {
+//     console.log('Fastest is ' + this.filter('fastest').map('name'));
+//   })
+//   // run async
+//   .run({ async: true });
 
 /** STRING ROTATION
  *
@@ -103,16 +103,10 @@ function isRotation2(s1, s2) {
   return s1.replace(s2_sub, '') === s2.slice(0, pivot_index);
 }
 
-// ctci
+// ctci ... short code
 function isRotation3(a, b) {
   const concatted = b + b;
   return !!concatted.includes(a);
-}
-
-// Implementation of isSubstring function which is defined in question
-// can only be called once
-function isSubstring(str, substr) {
-  return str.includes(substr);
 }
 
 // CTCI JS
@@ -167,6 +161,12 @@ function isRotation7(str1, str2) {
   return isSubstring(str1 + str1, str2);
 }
 
+// Implementation of isSubstring function which is defined in question
+// can only be called once
+function isSubstring(str, substr) {
+  return str.includes(substr);
+}
+
 // CTCI JS Sol
 function isRotation8(str1, str2) {
   if (str1 === str2) return true;
@@ -184,77 +184,77 @@ function isRotation8(str1, str2) {
 //   isRotation1('water', 'watre') //false
 // );
 
-console.log(
-  isRotation1('waterbottle', 'erbottlewat') === true,
-  isRotation1('waterbottle', 'waterbottle') === true,
-  isRotation1('waterbottle', 'aterbottlew') === true,
-  isRotation1('wat', 'wa') === false,
-  isRotation1('water', 'watre') === false,
-  isRotation1('', '') === true
-);
+// console.log(
+//   isRotation1('waterbottle', 'erbottlewat') === true,
+//   isRotation1('waterbottle', 'waterbottle') === true,
+//   isRotation1('waterbottle', 'aterbottlew') === true,
+//   isRotation1('wat', 'wa') === false,
+//   isRotation1('water', 'watre') === false,
+//   isRotation1('', '') === true
+// );
 
-console.log(
-  isRotation2('waterbottle', 'erbottlewat') === true,
-  isRotation2('waterbottle', 'waterbottle') === true,
-  isRotation2('waterbottle', 'aterbottlew') === true,
-  isRotation2('wat', 'wa') === false,
-  isRotation2('water', 'watre') === false,
-  isRotation2('', '') === true
-);
+// console.log(
+//   isRotation2('waterbottle', 'erbottlewat') === true,
+//   isRotation2('waterbottle', 'waterbottle') === true,
+//   isRotation2('waterbottle', 'aterbottlew') === true,
+//   isRotation2('wat', 'wa') === false,
+//   isRotation2('water', 'watre') === false,
+//   isRotation2('', '') === true
+// );
 
-console.log(
-  isRotation3('waterbottle', 'erbottlewat') === true,
-  isRotation3('waterbottle', 'waterbottle') === true,
-  isRotation3('waterbottle', 'aterbottlew') === true,
-  isRotation3('wat', 'wa') === false,
-  isRotation3('water', 'watre') === false,
-  isRotation3('', '') === true
-);
+// console.log(
+//   isRotation3('waterbottle', 'erbottlewat') === true,
+//   isRotation3('waterbottle', 'waterbottle') === true,
+//   isRotation3('waterbottle', 'aterbottlew') === true,
+//   isRotation3('wat', 'wa') === false,
+//   isRotation3('water', 'watre') === false,
+//   isRotation3('', '') === true
+// );
 
-console.log(
-  isRotation4('waterbottle', 'erbottlewat') === true,
-  isRotation4('waterbottle', 'waterbottle') === true,
-  isRotation4('waterbottle', 'aterbottlew') === true,
-  isRotation4('wat', 'wa') === false,
-  isRotation4('water', 'watre') === false,
-  isRotation4('', '') === true
-);
+// console.log(
+//   isRotation4('waterbottle', 'erbottlewat') === true,
+//   isRotation4('waterbottle', 'waterbottle') === true,
+//   isRotation4('waterbottle', 'aterbottlew') === true,
+//   isRotation4('wat', 'wa') === false,
+//   isRotation4('water', 'watre') === false,
+//   isRotation4('', '') === true
+// );
 
-console.log(
-  isRotation5('waterbottle', 'erbottlewat') === true,
-  isRotation5('waterbottle', 'waterbottle') === true,
-  isRotation5('waterbottle', 'aterbottlew') === true,
-  isRotation5('wat', 'wa') === false,
-  isRotation5('water', 'watre') === false,
-  isRotation5('', '') === true
-);
+// console.log(
+//   isRotation5('waterbottle', 'erbottlewat') === true,
+//   isRotation5('waterbottle', 'waterbottle') === true,
+//   isRotation5('waterbottle', 'aterbottlew') === true,
+//   isRotation5('wat', 'wa') === false,
+//   isRotation5('water', 'watre') === false,
+//   isRotation5('', '') === true
+// );
 
-console.log(
-  isRotation6('waterbottle', 'erbottlewat') === true,
-  isRotation6('waterbottle', 'waterbottle') === true,
-  isRotation6('waterbottle', 'aterbottlew') === true,
-  isRotation6('wat', 'wa') === false,
-  isRotation6('water', 'watre') === false,
-  isRotation6('', '') === true
-);
+// console.log(
+//   isRotation6('waterbottle', 'erbottlewat') === true,
+//   isRotation6('waterbottle', 'waterbottle') === true,
+//   isRotation6('waterbottle', 'aterbottlew') === true,
+//   isRotation6('wat', 'wa') === false,
+//   isRotation6('water', 'watre') === false,
+//   isRotation6('', '') === true
+// );
 
-console.log(
-  isRotation7('waterbottle', 'erbottlewat') === true,
-  isRotation7('waterbottle', 'waterbottle') === true,
-  isRotation7('waterbottle', 'aterbottlew') === true,
-  isRotation7('wat', 'wa') === false,
-  isRotation7('water', 'watre') === false,
-  isRotation7('', '') === true
-);
+// console.log(
+//   isRotation7('waterbottle', 'erbottlewat') === true,
+//   isRotation7('waterbottle', 'waterbottle') === true,
+//   isRotation7('waterbottle', 'aterbottlew') === true,
+//   isRotation7('wat', 'wa') === false,
+//   isRotation7('water', 'watre') === false,
+//   isRotation7('', '') === true
+// );
 
-console.log(
-  isRotation8('waterbottle', 'erbottlewat') === true,
-  isRotation8('waterbottle', 'waterbottle') === true,
-  isRotation8('waterbottle', 'aterbottlew') === true,
-  isRotation8('wat', 'wa') === false,
-  isRotation8('water', 'watre') === false,
-  isRotation8('', '') === true
-);
+// console.log(
+//   isRotation8('waterbottle', 'erbottlewat') === true,
+//   isRotation8('waterbottle', 'waterbottle') === true,
+//   isRotation8('waterbottle', 'aterbottlew') === true,
+//   isRotation8('wat', 'wa') === false,
+//   isRotation8('water', 'watre') === false,
+//   isRotation8('', '') === true
+// );
 
 // console.log(
 //   isRotation9('waterbottle', 'erbottlewat') === true,
@@ -274,3 +274,11 @@ console.log(
 // isRotation7 x 17,849,197 ops/sec ±1.06% (55 runs sampled)
 // isRotation8 x 606,590,215 ops/sec ±2.83% (54 runs sampled)
 // Fastest is isRotation8
+
+// Practice list:
+// 1. 8 clean code
+// 2. 7 ES5, O(n), O(n), split function
+// 3. 5 split function
+// 4. 6 shortish clean code
+// 5. 3 short code, but I would avoid because it ignores exceptions
+// 6. 5 clean code, split functions

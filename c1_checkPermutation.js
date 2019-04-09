@@ -446,7 +446,6 @@ function checkPermutation15(a, b) {
   }
 
   return true;
-  
 }
 
 /*
@@ -483,187 +482,187 @@ function checkPermutationX2(str1, str2) {
 }
 */
 
-console.log(
-  checkPermutation1('seven', 'nesve') === true,
-  checkPermutation1('string', 'gnirts') === true,
-  checkPermutation1('', '') === true,
-  checkPermutation1('so', 'os') === true,
-  checkPermutation1('restful', 'fluster') === true,
-  checkPermutation1('sos', 'os') === false,
-  checkPermutation1('abc', 'abz') === false,
-  checkPermutation1('baab', 'bbba') === false,
-  checkPermutation1('string', 'flings') === false,
-  checkPermutation1('eleven', 'elevvn') === false
-);
+// console.log(
+//   checkPermutation1('seven', 'nesve') === true,
+//   checkPermutation1('string', 'gnirts') === true,
+//   checkPermutation1('', '') === true,
+//   checkPermutation1('so', 'os') === true,
+//   checkPermutation1('restful', 'fluster') === true,
+//   checkPermutation1('sos', 'os') === false,
+//   checkPermutation1('abc', 'abz') === false,
+//   checkPermutation1('baab', 'bbba') === false,
+//   checkPermutation1('string', 'flings') === false,
+//   checkPermutation1('eleven', 'elevvn') === false
+// );
 
-console.log(
-  checkPermutation2('seven', 'nesve') === true,
-  checkPermutation2('string', 'gnirts') === true,
-  checkPermutation2('', '') === true,
-  checkPermutation2('so', 'os') === true,
-  checkPermutation2('restful', 'fluster') === true,
-  checkPermutation2('sos', 'os') === false,
-  checkPermutation2('abc', 'abz') === false,
-  checkPermutation2('baab', 'bbba') === false,
-  checkPermutation2('string', 'flings') === false,
-  checkPermutation2('eleven', 'elevvn') === false
-);
-console.log(
-  checkPermutation3('seven', 'nesve') === true,
-  checkPermutation3('string', 'gnirts') === true,
-  checkPermutation3('', '') === true,
-  checkPermutation3('so', 'os') === true,
-  checkPermutation3('restful', 'fluster') === true,
-  checkPermutation3('sos', 'os') === false,
-  checkPermutation3('abc', 'abz') === false,
-  checkPermutation3('baab', 'bbba') === false,
-  checkPermutation3('string', 'flings') === false,
-  checkPermutation3('eleven', 'elevvn') === false
-);
-console.log(
-  checkPermutation4('seven', 'nesve') === true,
-  checkPermutation4('string', 'gnirts') === true,
-  checkPermutation4('', '') === true,
-  checkPermutation4('so', 'os') === true,
-  checkPermutation4('restful', 'fluster') === true,
-  checkPermutation4('sos', 'os') === false,
-  checkPermutation4('abc', 'abz') === false,
-  checkPermutation4('baab', 'bbba') === false,
-  checkPermutation4('string', 'flings') === false,
-  checkPermutation4('eleven', 'elevvn') === false
-);
-console.log(
-  checkPermutation5('seven', 'nesve') === true,
-  checkPermutation5('string', 'gnirts') === true,
-  checkPermutation5('', '') === true,
-  checkPermutation5('so', 'os') === true,
-  checkPermutation5('restful', 'fluster') === true,
-  checkPermutation5('sos', 'os') === false,
-  checkPermutation5('abc', 'abz') === false,
-  checkPermutation5('baab', 'bbba') === false,
-  checkPermutation5('string', 'flings') === false,
-  checkPermutation5('eleven', 'elevvn') === false
-);
-console.log(
-  checkPermutation6('seven', 'nesve') === true,
-  checkPermutation6('string', 'gnirts') === true,
-  checkPermutation6('', '') === true,
-  checkPermutation6('so', 'os') === true,
-  checkPermutation6('restful', 'fluster') === true,
-  checkPermutation6('sos', 'os') === false,
-  checkPermutation6('abc', 'abz') === false,
-  checkPermutation6('baab', 'bbba') === false,
-  checkPermutation6('string', 'flings') === false,
-  checkPermutation6('eleven', 'elevvn') === false
-);
-console.log(
-  checkPermutation7('seven', 'nesve') === true,
-  checkPermutation7('string', 'gnirts') === true,
-  checkPermutation7('', '') === true,
-  checkPermutation7('so', 'os') === true,
-  checkPermutation7('restful', 'fluster') === true,
-  checkPermutation7('sos', 'os') === false,
-  checkPermutation7('abc', 'abz') === false,
-  checkPermutation7('baab', 'bbba') === false,
-  checkPermutation7('string', 'flings') === false,
-  checkPermutation7('eleven', 'elevvn') === false
-);
-console.log(
-  checkPermutation8('seven', 'nesve') === true,
-  checkPermutation8('string', 'gnirts') === true,
-  checkPermutation8('', '') === true,
-  checkPermutation8('so', 'os') === true,
-  checkPermutation8('restful', 'fluster') === true,
-  checkPermutation8('sos', 'os') === false,
-  checkPermutation8('abc', 'abz') === false,
-  checkPermutation8('baab', 'bbba') === false,
-  checkPermutation8('string', 'flings') === false,
-  checkPermutation8('eleven', 'elevvn') === false
-);
-console.log(
-  checkPermutation9('seven', 'nesve') === true,
-  checkPermutation9('string', 'gnirts') === true,
-  checkPermutation9('', '') === true,
-  checkPermutation9('so', 'os') === true,
-  checkPermutation9('restful', 'fluster') === true,
-  checkPermutation9('sos', 'os') === false,
-  checkPermutation9('abc', 'abz') === false,
-  checkPermutation9('baab', 'bbba') === false,
-  checkPermutation9('string', 'flings') === false,
-  checkPermutation9('eleven', 'elevvn') === false
-);
-console.log(
-  checkPermutation10('seven', 'nesve') === true,
-  checkPermutation10('string', 'gnirts') === true,
-  checkPermutation10('', '') === true,
-  checkPermutation10('so', 'os') === true,
-  checkPermutation10('restful', 'fluster') === true,
-  checkPermutation10('sos', 'os') === false,
-  checkPermutation10('abc', 'abz') === false,
-  checkPermutation10('baab', 'bbba') === false,
-  checkPermutation10('string', 'flings') === false,
-  checkPermutation10('eleven', 'elevvn') === false
-);
-console.log(
-  checkPermutation11('seven', 'nesve') === true,
-  checkPermutation11('string', 'gnirts') === true,
-  checkPermutation11('', '') === true,
-  checkPermutation11('so', 'os') === true,
-  checkPermutation11('restful', 'fluster') === true,
-  checkPermutation11('sos', 'os') === false,
-  checkPermutation11('abc', 'abz') === false,
-  checkPermutation11('baab', 'bbba') === false,
-  checkPermutation11('string', 'flings') === false,
-  checkPermutation11('eleven', 'elevvn') === false
-);
-console.log(
-  checkPermutation12('seven', 'nesve') === true,
-  checkPermutation12('string', 'gnirts') === true,
-  checkPermutation12('', '') === true,
-  checkPermutation12('so', 'os') === true,
-  checkPermutation12('restful', 'fluster') === true,
-  checkPermutation12('sos', 'os') === false,
-  checkPermutation12('abc', 'abz') === false,
-  checkPermutation12('baab', 'bbba') === false,
-  checkPermutation12('string', 'flings') === false,
-  checkPermutation12('eleven', 'elevvn') === false
-);
-console.log(
-  checkPermutation13('seven', 'nesve') === true,
-  checkPermutation13('string', 'gnirts') === true,
-  checkPermutation13('', '') === true,
-  checkPermutation13('so', 'os') === true,
-  checkPermutation13('restful', 'fluster') === true,
-  checkPermutation13('sos', 'os') === false,
-  checkPermutation13('abc', 'abz') === false,
-  checkPermutation13('baab', 'bbba') === false,
-  checkPermutation13('string', 'flings') === false,
-  checkPermutation13('eleven', 'elevvn') === false
-);
-console.log(
-  checkPermutation14('seven', 'nesve') === true,
-  checkPermutation14('string', 'gnirts') === true,
-  checkPermutation14('', '') === true,
-  checkPermutation14('so', 'os') === true,
-  checkPermutation14('restful', 'fluster') === true,
-  checkPermutation14('sos', 'os') === false,
-  checkPermutation14('abc', 'abz') === false,
-  checkPermutation14('baab', 'bbba') === false,
-  checkPermutation14('string', 'flings') === false,
-  checkPermutation14('eleven', 'elevvn') === false
-);
-console.log(
-  checkPermutation15('seven', 'nesve') === true,
-  checkPermutation15('string', 'gnirts') === true,
-  checkPermutation15('', '') === true,
-  checkPermutation15('so', 'os') === true,
-  checkPermutation15('restful', 'fluster') === true,
-  checkPermutation15('sos', 'os') === false,
-  checkPermutation15('abc', 'abz') === false,
-  checkPermutation15('baab', 'bbba') === false,
-  checkPermutation15('string', 'flings') === false,
-  checkPermutation15('eleven', 'elevvn') === false
-);
+// console.log(
+//   checkPermutation2('seven', 'nesve') === true,
+//   checkPermutation2('string', 'gnirts') === true,
+//   checkPermutation2('', '') === true,
+//   checkPermutation2('so', 'os') === true,
+//   checkPermutation2('restful', 'fluster') === true,
+//   checkPermutation2('sos', 'os') === false,
+//   checkPermutation2('abc', 'abz') === false,
+//   checkPermutation2('baab', 'bbba') === false,
+//   checkPermutation2('string', 'flings') === false,
+//   checkPermutation2('eleven', 'elevvn') === false
+// );
+// console.log(
+//   checkPermutation3('seven', 'nesve') === true,
+//   checkPermutation3('string', 'gnirts') === true,
+//   checkPermutation3('', '') === true,
+//   checkPermutation3('so', 'os') === true,
+//   checkPermutation3('restful', 'fluster') === true,
+//   checkPermutation3('sos', 'os') === false,
+//   checkPermutation3('abc', 'abz') === false,
+//   checkPermutation3('baab', 'bbba') === false,
+//   checkPermutation3('string', 'flings') === false,
+//   checkPermutation3('eleven', 'elevvn') === false
+// );
+// console.log(
+//   checkPermutation4('seven', 'nesve') === true,
+//   checkPermutation4('string', 'gnirts') === true,
+//   checkPermutation4('', '') === true,
+//   checkPermutation4('so', 'os') === true,
+//   checkPermutation4('restful', 'fluster') === true,
+//   checkPermutation4('sos', 'os') === false,
+//   checkPermutation4('abc', 'abz') === false,
+//   checkPermutation4('baab', 'bbba') === false,
+//   checkPermutation4('string', 'flings') === false,
+//   checkPermutation4('eleven', 'elevvn') === false
+// );
+// console.log(
+//   checkPermutation5('seven', 'nesve') === true,
+//   checkPermutation5('string', 'gnirts') === true,
+//   checkPermutation5('', '') === true,
+//   checkPermutation5('so', 'os') === true,
+//   checkPermutation5('restful', 'fluster') === true,
+//   checkPermutation5('sos', 'os') === false,
+//   checkPermutation5('abc', 'abz') === false,
+//   checkPermutation5('baab', 'bbba') === false,
+//   checkPermutation5('string', 'flings') === false,
+//   checkPermutation5('eleven', 'elevvn') === false
+// );
+// console.log(
+//   checkPermutation6('seven', 'nesve') === true,
+//   checkPermutation6('string', 'gnirts') === true,
+//   checkPermutation6('', '') === true,
+//   checkPermutation6('so', 'os') === true,
+//   checkPermutation6('restful', 'fluster') === true,
+//   checkPermutation6('sos', 'os') === false,
+//   checkPermutation6('abc', 'abz') === false,
+//   checkPermutation6('baab', 'bbba') === false,
+//   checkPermutation6('string', 'flings') === false,
+//   checkPermutation6('eleven', 'elevvn') === false
+// );
+// console.log(
+//   checkPermutation7('seven', 'nesve') === true,
+//   checkPermutation7('string', 'gnirts') === true,
+//   checkPermutation7('', '') === true,
+//   checkPermutation7('so', 'os') === true,
+//   checkPermutation7('restful', 'fluster') === true,
+//   checkPermutation7('sos', 'os') === false,
+//   checkPermutation7('abc', 'abz') === false,
+//   checkPermutation7('baab', 'bbba') === false,
+//   checkPermutation7('string', 'flings') === false,
+//   checkPermutation7('eleven', 'elevvn') === false
+// );
+// console.log(
+//   checkPermutation8('seven', 'nesve') === true,
+//   checkPermutation8('string', 'gnirts') === true,
+//   checkPermutation8('', '') === true,
+//   checkPermutation8('so', 'os') === true,
+//   checkPermutation8('restful', 'fluster') === true,
+//   checkPermutation8('sos', 'os') === false,
+//   checkPermutation8('abc', 'abz') === false,
+//   checkPermutation8('baab', 'bbba') === false,
+//   checkPermutation8('string', 'flings') === false,
+//   checkPermutation8('eleven', 'elevvn') === false
+// );
+// console.log(
+//   checkPermutation9('seven', 'nesve') === true,
+//   checkPermutation9('string', 'gnirts') === true,
+//   checkPermutation9('', '') === true,
+//   checkPermutation9('so', 'os') === true,
+//   checkPermutation9('restful', 'fluster') === true,
+//   checkPermutation9('sos', 'os') === false,
+//   checkPermutation9('abc', 'abz') === false,
+//   checkPermutation9('baab', 'bbba') === false,
+//   checkPermutation9('string', 'flings') === false,
+//   checkPermutation9('eleven', 'elevvn') === false
+// );
+// console.log(
+//   checkPermutation10('seven', 'nesve') === true,
+//   checkPermutation10('string', 'gnirts') === true,
+//   checkPermutation10('', '') === true,
+//   checkPermutation10('so', 'os') === true,
+//   checkPermutation10('restful', 'fluster') === true,
+//   checkPermutation10('sos', 'os') === false,
+//   checkPermutation10('abc', 'abz') === false,
+//   checkPermutation10('baab', 'bbba') === false,
+//   checkPermutation10('string', 'flings') === false,
+//   checkPermutation10('eleven', 'elevvn') === false
+// );
+// console.log(
+//   checkPermutation11('seven', 'nesve') === true,
+//   checkPermutation11('string', 'gnirts') === true,
+//   checkPermutation11('', '') === true,
+//   checkPermutation11('so', 'os') === true,
+//   checkPermutation11('restful', 'fluster') === true,
+//   checkPermutation11('sos', 'os') === false,
+//   checkPermutation11('abc', 'abz') === false,
+//   checkPermutation11('baab', 'bbba') === false,
+//   checkPermutation11('string', 'flings') === false,
+//   checkPermutation11('eleven', 'elevvn') === false
+// );
+// console.log(
+//   checkPermutation12('seven', 'nesve') === true,
+//   checkPermutation12('string', 'gnirts') === true,
+//   checkPermutation12('', '') === true,
+//   checkPermutation12('so', 'os') === true,
+//   checkPermutation12('restful', 'fluster') === true,
+//   checkPermutation12('sos', 'os') === false,
+//   checkPermutation12('abc', 'abz') === false,
+//   checkPermutation12('baab', 'bbba') === false,
+//   checkPermutation12('string', 'flings') === false,
+//   checkPermutation12('eleven', 'elevvn') === false
+// );
+// console.log(
+//   checkPermutation13('seven', 'nesve') === true,
+//   checkPermutation13('string', 'gnirts') === true,
+//   checkPermutation13('', '') === true,
+//   checkPermutation13('so', 'os') === true,
+//   checkPermutation13('restful', 'fluster') === true,
+//   checkPermutation13('sos', 'os') === false,
+//   checkPermutation13('abc', 'abz') === false,
+//   checkPermutation13('baab', 'bbba') === false,
+//   checkPermutation13('string', 'flings') === false,
+//   checkPermutation13('eleven', 'elevvn') === false
+// );
+// console.log(
+//   checkPermutation14('seven', 'nesve') === true,
+//   checkPermutation14('string', 'gnirts') === true,
+//   checkPermutation14('', '') === true,
+//   checkPermutation14('so', 'os') === true,
+//   checkPermutation14('restful', 'fluster') === true,
+//   checkPermutation14('sos', 'os') === false,
+//   checkPermutation14('abc', 'abz') === false,
+//   checkPermutation14('baab', 'bbba') === false,
+//   checkPermutation14('string', 'flings') === false,
+//   checkPermutation14('eleven', 'elevvn') === false
+// );
+// console.log(
+//   checkPermutation15('seven', 'nesve') === true,
+//   checkPermutation15('string', 'gnirts') === true,
+//   checkPermutation15('', '') === true,
+//   checkPermutation15('so', 'os') === true,
+//   checkPermutation15('restful', 'fluster') === true,
+//   checkPermutation15('sos', 'os') === false,
+//   checkPermutation15('abc', 'abz') === false,
+//   checkPermutation15('baab', 'bbba') === false,
+//   checkPermutation15('string', 'flings') === false,
+//   checkPermutation15('eleven', 'elevvn') === false
+// );
 // console.log(
 //   checkPermutation16('seven', 'nesve') === true,
 //   checkPermutation16('string', 'gnirts') === true,
@@ -694,3 +693,11 @@ console.log(
 // checkPermutation14 x 2,434,787 ops/sec ±3.04% (52 runs sampled)
 // checkPermutation15 x 2,483,513 ops/sec ±2.35% (51 runs sampled)
 // Fastest is checkPermutation15,checkPermutation14
+
+// Practice list:
+// 1. 14 memo/hash chirpingmermaids, O(2n), O(n) ... quick clean code
+// 2. 15 memo ...quick clean code
+// 3. 13 memo/separate functions, O(2n), O(n) ... slightly advanced
+// 4. 12 memo O(n), O(n), new Map, get set delete ... more scalable clean code
+// 5. 11 memo new Map, get set value() ... clean code
+// 6. 10 memo new Map, get set delete

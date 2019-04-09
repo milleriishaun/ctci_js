@@ -1,50 +1,50 @@
-var Benchmark = require('benchmark');
-var suite = new Benchmark.Suite();
+// var Benchmark = require('benchmark');
+// var suite = new Benchmark.Suite();
 
-// add tests
-suite
-  .add('stringCompression1', function() {
-    stringCompression1('aabcccccaaa');
-  })
-  .add('stringCompression2', function() {
-    stringCompression2('aabcccccaaa');
-  })
-  .add('stringCompression3', function() {
-    stringCompression3('aabcccccaaa');
-  })
-  .add('stringCompression4', function() {
-    stringCompression4('aabcccccaaa');
-  })
-  .add('stringCompression5', function() {
-    stringCompression5('aabcccccaaa');
-  })
-  .add('stringCompression6', function() {
-    stringCompression6('aabcccccaaa');
-  })
-  .add('stringCompression7', function() {
-    stringCompression7('aabcccccaaa');
-  })
-  .add('stringCompression8', function() {
-    stringCompression8('aabcccccaaa');
-  })
-  .add('stringCompression9', function() {
-    stringCompression9('aabcccccaaa');
-  })
-  .add('stringCompression10', function() {
-    stringCompression10('aabcccccaaa');
-  })
-  .add('stringCompression11', function() {
-    stringCompression11('aabcccccaaa');
-  })
-  // add listeners
-  .on('cycle', function(event) {
-    console.log(String(event.target));
-  })
-  .on('complete', function() {
-    console.log('Fastest is ' + this.filter('fastest').map('name'));
-  })
-  // run async
-  .run({ async: true });
+// // add tests
+// suite
+//   .add('stringCompression1', function() {
+//     stringCompression1('aabcccccaaa');
+//   })
+//   .add('stringCompression2', function() {
+//     stringCompression2('aabcccccaaa');
+//   })
+//   .add('stringCompression3', function() {
+//     stringCompression3('aabcccccaaa');
+//   })
+//   .add('stringCompression4', function() {
+//     stringCompression4('aabcccccaaa');
+//   })
+//   .add('stringCompression5', function() {
+//     stringCompression5('aabcccccaaa');
+//   })
+//   .add('stringCompression6', function() {
+//     stringCompression6('aabcccccaaa');
+//   })
+//   .add('stringCompression7', function() {
+//     stringCompression7('aabcccccaaa');
+//   })
+//   .add('stringCompression8', function() {
+//     stringCompression8('aabcccccaaa');
+//   })
+//   .add('stringCompression9', function() {
+//     stringCompression9('aabcccccaaa');
+//   })
+//   .add('stringCompression10', function() {
+//     stringCompression10('aabcccccaaa');
+//   })
+//   .add('stringCompression11', function() {
+//     stringCompression11('aabcccccaaa');
+//   })
+//   // add listeners
+//   .on('cycle', function(event) {
+//     console.log(String(event.target));
+//   })
+//   .on('complete', function() {
+//     console.log('Fastest is ' + this.filter('fastest').map('name'));
+//   })
+//   // run async
+//   .run({ async: true });
 
 // CTCI JS Sol1
 function stringCompression1(str) {
@@ -229,7 +229,7 @@ function stringCompression8(str) {
 // ChirpingmermaidCodes
 
 let stringCompression9 = s => {
-  // traversestirng, keep count of repeated chars
+  // traverse string, keep count of repeated chars
   // if curr and next char is the same, inc count
   // otherwise, concat curr char and count to output string,
   // and remember to reset count to 1.
@@ -304,93 +304,93 @@ function stringCompression11(str) {
   return cStr.length < str.length ? cStr : str;
 }
 
-console.log(
-  stringCompression1('aabcccccaaa') === 'a2b1c5a3',
-  stringCompression1('aa') === 'aa',
-  stringCompression1('aaAAaa') === 'aaAAaa',
-  stringCompression1('aaaAAaa') === 'a3A2a2',
-  stringCompression1('') === ''
-);
+// console.log(
+//   stringCompression1('aabcccccaaa') === 'a2b1c5a3',
+//   stringCompression1('aa') === 'aa',
+//   stringCompression1('aaAAaa') === 'aaAAaa',
+//   stringCompression1('aaaAAaa') === 'a3A2a2',
+//   stringCompression1('') === ''
+// );
 
-console.log(
-  stringCompression2('aabcccccaaa') === 'a2b1c5a3',
-  stringCompression2('aa') === 'aa',
-  stringCompression2('aaAAaa') === 'aaAAaa',
-  stringCompression2('aaaAAaa') === 'a3A2a2',
-  stringCompression2('') === ''
-);
+// console.log(
+//   stringCompression2('aabcccccaaa') === 'a2b1c5a3',
+//   stringCompression2('aa') === 'aa',
+//   stringCompression2('aaAAaa') === 'aaAAaa',
+//   stringCompression2('aaaAAaa') === 'a3A2a2',
+//   stringCompression2('') === ''
+// );
 
-console.log(
-  stringCompression3('aabcccccaaa') === 'a2b1c5a3',
-  stringCompression3('aa') === 'aa',
-  stringCompression3('aaAAaa') === 'aaAAaa',
-  stringCompression3('aaaAAaa') === 'a3A2a2',
-  stringCompression3('') === ''
-);
+// console.log(
+//   stringCompression3('aabcccccaaa') === 'a2b1c5a3',
+//   stringCompression3('aa') === 'aa',
+//   stringCompression3('aaAAaa') === 'aaAAaa',
+//   stringCompression3('aaaAAaa') === 'a3A2a2',
+//   stringCompression3('') === ''
+// );
 
-console.log(
-  stringCompression4('aabcccccaaa') === 'a2b1c5a3',
-  stringCompression4('aa') === 'aa',
-  stringCompression4('aaAAaa') === 'aaAAaa',
-  stringCompression4('aaaAAaa') === 'a3A2a2',
-  stringCompression4('') === ''
-);
+// console.log(
+//   stringCompression4('aabcccccaaa') === 'a2b1c5a3',
+//   stringCompression4('aa') === 'aa',
+//   stringCompression4('aaAAaa') === 'aaAAaa',
+//   stringCompression4('aaaAAaa') === 'a3A2a2',
+//   stringCompression4('') === ''
+// );
 
-console.log(
-  stringCompression5('aabcccccaaa') === 'a2b1c5a3',
-  stringCompression5('aa') === 'aa',
-  stringCompression5('aaAAaa') === 'aaAAaa',
-  stringCompression5('aaaAAaa') === 'a3A2a2',
-  stringCompression5('') === ''
-);
+// console.log(
+//   stringCompression5('aabcccccaaa') === 'a2b1c5a3',
+//   stringCompression5('aa') === 'aa',
+//   stringCompression5('aaAAaa') === 'aaAAaa',
+//   stringCompression5('aaaAAaa') === 'a3A2a2',
+//   stringCompression5('') === ''
+// );
 
-console.log(
-  stringCompression6('aabcccccaaa') === 'a2b1c5a3',
-  stringCompression6('aa') === 'aa',
-  stringCompression6('aaAAaa') === 'aaAAaa',
-  stringCompression6('aaaAAaa') === 'a3A2a2',
-  stringCompression6('') === ''
-);
+// console.log(
+//   stringCompression6('aabcccccaaa') === 'a2b1c5a3',
+//   stringCompression6('aa') === 'aa',
+//   stringCompression6('aaAAaa') === 'aaAAaa',
+//   stringCompression6('aaaAAaa') === 'a3A2a2',
+//   stringCompression6('') === ''
+// );
 
-console.log(
-  stringCompression7('aabcccccaaa') === 'a2b1c5a3',
-  stringCompression7('aa') === 'aa',
-  stringCompression7('aaAAaa') === 'aaAAaa',
-  stringCompression7('aaaAAaa') === 'a3A2a2',
-  stringCompression7('') === ''
-);
+// console.log(
+//   stringCompression7('aabcccccaaa') === 'a2b1c5a3',
+//   stringCompression7('aa') === 'aa',
+//   stringCompression7('aaAAaa') === 'aaAAaa',
+//   stringCompression7('aaaAAaa') === 'a3A2a2',
+//   stringCompression7('') === ''
+// );
 
-console.log(
-  stringCompression8('aabcccccaaa') === 'a2b1c5a3',
-  stringCompression8('aa') === 'aa',
-  stringCompression8('aaAAaa') === 'aaAAaa',
-  stringCompression8('aaaAAaa') === 'a3A2a2',
-  stringCompression8('') === ''
-);
+// console.log(
+//   stringCompression8('aabcccccaaa') === 'a2b1c5a3',
+//   stringCompression8('aa') === 'aa',
+//   stringCompression8('aaAAaa') === 'aaAAaa',
+//   stringCompression8('aaaAAaa') === 'a3A2a2',
+//   stringCompression8('') === ''
+// );
 
-console.log(
-  stringCompression9('aabcccccaaa') === 'a2b1c5a3',
-  stringCompression9('aa') === 'aa',
-  stringCompression9('aaAAaa') === 'aaAAaa',
-  stringCompression9('aaaAAaa') === 'a3A2a2',
-  stringCompression9('') === ''
-);
+// console.log(
+//   stringCompression9('aabcccccaaa') === 'a2b1c5a3',
+//   stringCompression9('aa') === 'aa',
+//   stringCompression9('aaAAaa') === 'aaAAaa',
+//   stringCompression9('aaaAAaa') === 'a3A2a2',
+//   stringCompression9('') === ''
+// );
 
-console.log(
-  stringCompression10('aabcccccaaa') === 'a2b1c5a3',
-  stringCompression10('aa') === 'aa',
-  stringCompression10('aaAAaa') === 'aaAAaa',
-  stringCompression10('aaaAAaa') === 'a3A2a2',
-  stringCompression10('') === ''
-);
+// console.log(
+//   stringCompression10('aabcccccaaa') === 'a2b1c5a3',
+//   stringCompression10('aa') === 'aa',
+//   stringCompression10('aaAAaa') === 'aaAAaa',
+//   stringCompression10('aaaAAaa') === 'a3A2a2',
+//   stringCompression10('') === ''
+// );
 
-console.log(
-  stringCompression11('aabcccccaaa') === 'a2b1c5a3',
-  stringCompression11('aa') === 'aa',
-  stringCompression11('aaAAaa') === 'aaAAaa',
-  stringCompression11('aaaAAaa') === 'a3A2a2',
-  stringCompression11('') === ''
-);
+// console.log(
+//   stringCompression11('aabcccccaaa') === 'a2b1c5a3',
+//   stringCompression11('aa') === 'aa',
+//   stringCompression11('aaAAaa') === 'aaAAaa',
+//   stringCompression11('aaaAAaa') === 'a3A2a2',
+//   stringCompression11('') === ''
+// );
 
 // console.log(
 //   stringCompression12('aabcccccaaa') === 'a2b1c5a3',
@@ -421,3 +421,12 @@ console.log(
 // Fastest is stringCompression11
 
 // Note: String concatenation is O(xn^2), where x is length of string.
+
+// Practice list:
+// 1. 11 O(n), O(n), ES5, optimized string concat(faster than .join(''))
+// 2. 10 clean code
+// 3. 9 O(n), O(n), chirpingmermaids, ES6 ... clean code, += is faster than concat
+// 4. 8 clean code
+// 5. 7
+// 6. 6 clean code
+// 7. 5

@@ -1,41 +1,41 @@
-var Benchmark = require('benchmark');
-var suite = new Benchmark.Suite();
+// var Benchmark = require('benchmark');
+// var suite = new Benchmark.Suite();
 
-suite
-  .add('oneAway1', function() {
-    oneAway1('pale', 'bale');
-  })
-  .add('oneAway2', function() {
-    oneAway2('pale', 'bale');
-  })
-  .add('oneAway3', function() {
-    oneAway3('pale', 'bale');
-  })
-  .add('oneAway4', function() {
-    oneAway4('pale', 'bale');
-  })
-  .add('oneAway5', function() {
-    oneAway5('pale', 'bale');
-  })
-  .add('oneAway6', function() {
-    oneAway6('pale', 'bale');
-  })
-  .add('oneAway7', function() {
-    oneAway7('pale', 'bale');
-  })
-  .add('oneAway8', function() {
-    oneAway8('pale', 'bale');
-  })
-  .add('oneAway9', function() {
-    oneAway9('pale', 'bale');
-  })
-  .on('cycle', function(event) {
-    console.log(String(event.target));
-  })
-  .on('complete', function() {
-    console.log('Fastest is ' + this.filter('fastest').map('name'));
-  })
-  .run({ async: true });
+// suite
+//   .add('oneAway1', function() {
+//     oneAway1('pale', 'bale');
+//   })
+//   .add('oneAway2', function() {
+//     oneAway2('pale', 'bale');
+//   })
+//   .add('oneAway3', function() {
+//     oneAway3('pale', 'bale');
+//   })
+//   .add('oneAway4', function() {
+//     oneAway4('pale', 'bale');
+//   })
+//   .add('oneAway5', function() {
+//     oneAway5('pale', 'bale');
+//   })
+//   .add('oneAway6', function() {
+//     oneAway6('pale', 'bale');
+//   })
+//   .add('oneAway7', function() {
+//     oneAway7('pale', 'bale');
+//   })
+//   .add('oneAway8', function() {
+//     oneAway8('pale', 'bale');
+//   })
+//   .add('oneAway9', function() {
+//     oneAway9('pale', 'bale');
+//   })
+//   .on('cycle', function(event) {
+//     console.log(String(event.target));
+//   })
+//   .on('complete', function() {
+//     console.log('Fastest is ' + this.filter('fastest').map('name'));
+//   })
+//   .run({ async: true });
 
 /**
  * ONE AWAY
@@ -421,60 +421,60 @@ function oneAway9(s1, s2) {
   }
 }
 
-console.log(
-  oneAway1('pale', 'ple') === true,
-  oneAway1('pales', 'pale') === true,
-  oneAway1('pale', 'bale') === true,
-  oneAway1('pale', 'bake') === false
-);
-console.log(
-  oneAway2('pale', 'ple') === true,
-  oneAway2('pales', 'pale') === true,
-  oneAway2('pale', 'bale') === true,
-  oneAway2('pale', 'bake') === false
-);
-console.log(
-  oneAway3('pale', 'ple') === true,
-  oneAway3('pales', 'pale') === true,
-  oneAway3('pale', 'bale') === true,
-  oneAway3('pale', 'bake') === false
-);
-console.log(
-  oneAway4('pale', 'ple') === true,
-  oneAway4('pales', 'pale') === true,
-  oneAway4('pale', 'bale') === true,
-  oneAway4('pale', 'bake') === false
-);
-console.log(
-  oneAway5('pale', 'ple') === true,
-  oneAway5('pales', 'pale') === true,
-  oneAway5('pale', 'bale') === true,
-  oneAway5('pale', 'bake') === false
-);
-console.log(
-  oneAway6('pale', 'ple') === true,
-  oneAway6('pales', 'pale') === true,
-  oneAway6('pale', 'bale') === true,
-  oneAway6('pale', 'bake') === false
-);
-console.log(
-  oneAway7('pale', 'ple') === true,
-  oneAway7('pales', 'pale') === true,
-  oneAway7('pale', 'bale') === true,
-  oneAway7('pale', 'bake') === false
-);
-console.log(
-  oneAway8('pale', 'ple') === true,
-  oneAway8('pales', 'pale') === true,
-  oneAway8('pale', 'bale') === true,
-  oneAway8('pale', 'bake') === false
-);
-console.log(
-  oneAway9('pale', 'ple') === true,
-  oneAway9('pales', 'pale') === true,
-  oneAway9('pale', 'bale') === true,
-  oneAway9('pale', 'bake') === false
-);
+// console.log(
+//   oneAway1('pale', 'ple') === true,
+//   oneAway1('pales', 'pale') === true,
+//   oneAway1('pale', 'bale') === true,
+//   oneAway1('pale', 'bake') === false
+// );
+// console.log(
+//   oneAway2('pale', 'ple') === true,
+//   oneAway2('pales', 'pale') === true,
+//   oneAway2('pale', 'bale') === true,
+//   oneAway2('pale', 'bake') === false
+// );
+// console.log(
+//   oneAway3('pale', 'ple') === true,
+//   oneAway3('pales', 'pale') === true,
+//   oneAway3('pale', 'bale') === true,
+//   oneAway3('pale', 'bake') === false
+// );
+// console.log(
+//   oneAway4('pale', 'ple') === true,
+//   oneAway4('pales', 'pale') === true,
+//   oneAway4('pale', 'bale') === true,
+//   oneAway4('pale', 'bake') === false
+// );
+// console.log(
+//   oneAway5('pale', 'ple') === true,
+//   oneAway5('pales', 'pale') === true,
+//   oneAway5('pale', 'bale') === true,
+//   oneAway5('pale', 'bake') === false
+// );
+// console.log(
+//   oneAway6('pale', 'ple') === true,
+//   oneAway6('pales', 'pale') === true,
+//   oneAway6('pale', 'bale') === true,
+//   oneAway6('pale', 'bake') === false
+// );
+// console.log(
+//   oneAway7('pale', 'ple') === true,
+//   oneAway7('pales', 'pale') === true,
+//   oneAway7('pale', 'bale') === true,
+//   oneAway7('pale', 'bake') === false
+// );
+// console.log(
+//   oneAway8('pale', 'ple') === true,
+//   oneAway8('pales', 'pale') === true,
+//   oneAway8('pale', 'bale') === true,
+//   oneAway8('pale', 'bake') === false
+// );
+// console.log(
+//   oneAway9('pale', 'ple') === true,
+//   oneAway9('pales', 'pale') === true,
+//   oneAway9('pale', 'bale') === true,
+//   oneAway9('pale', 'bake') === false
+// );
 // console.log(
 //   oneAway10('pale', 'ple') === true,
 //   oneAway10('pales', 'pale') === true,
@@ -493,3 +493,10 @@ console.log(
 // oneAway8 x 20,681,569 ops/sec ±1.84% (52 runs sampled)
 // oneAway9 x 51,764,699 ops/sec ±2.72% (47 runs sampled)
 // Fastest is oneAway9
+
+// Practice list:
+// 1. 8 memo ES5
+// 2. 7 split functions
+// 3. 9 very quick clean code ... might want to start with this tbh
+// 4. 6 somewhat clean code
+// 5. 5 pointers and mulligan(advanced, messy code/complexity 25), split functions

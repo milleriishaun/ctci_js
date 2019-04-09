@@ -1,41 +1,41 @@
-var Benchmark = require('benchmark');
-var suite = new Benchmark.Suite();
+// var Benchmark = require('benchmark');
+// var suite = new Benchmark.Suite();
 
-// add tests
-suite
-  .add('rotateMatrix1', function() {
-    rotateMatrix1([[1, 2], [3, 4]]);
-  })
-  .add('rotateMatrix2', function() {
-    rotateMatrix2([[1, 2], [3, 4]]);
-  })
-  .add('rotateMatrix3', function() {
-    rotateMatrix3([[1, 2], [3, 4]]);
-  })
-  .add('rotateMatrix4', function() {
-    rotateMatrix4([[1, 2], [3, 4]]);
-  })
-  .add('rotateMatrix5', function() {
-    rotateMatrix5([[1, 2], [3, 4]]);
-  })
-  .add('rotateMatrix6', function() {
-    rotateMatrix6([[1, 2], [3, 4]]);
-  })
-  .add('rotateMatrix7', function() {
-    rotateMatrix7([[1, 2], [3, 4]]);
-  })
-  .add('rotateMatrix8', function() {
-    rotateMatrix8([[1, 2], [3, 4]]);
-  })
-  // add listeners
-  .on('cycle', function(event) {
-    console.log(String(event.target));
-  })
-  .on('complete', function() {
-    console.log('Fastest is ' + this.filter('fastest').map('name'));
-  })
-  // run async
-  .run({ async: true });
+// // add tests
+// suite
+//   .add('rotateMatrix1', function() {
+//     rotateMatrix1([[1, 2], [3, 4]]);
+//   })
+//   .add('rotateMatrix2', function() {
+//     rotateMatrix2([[1, 2], [3, 4]]);
+//   })
+//   .add('rotateMatrix3', function() {
+//     rotateMatrix3([[1, 2], [3, 4]]);
+//   })
+//   .add('rotateMatrix4', function() {
+//     rotateMatrix4([[1, 2], [3, 4]]);
+//   })
+//   .add('rotateMatrix5', function() {
+//     rotateMatrix5([[1, 2], [3, 4]]);
+//   })
+//   .add('rotateMatrix6', function() {
+//     rotateMatrix6([[1, 2], [3, 4]]);
+//   })
+//   .add('rotateMatrix7', function() {
+//     rotateMatrix7([[1, 2], [3, 4]]);
+//   })
+//   .add('rotateMatrix8', function() {
+//     rotateMatrix8([[1, 2], [3, 4]]);
+//   })
+//   // add listeners
+//   .on('cycle', function(event) {
+//     console.log(String(event.target));
+//   })
+//   .on('complete', function() {
+//     console.log('Fastest is ' + this.filter('fastest').map('name'));
+//   })
+//   // run async
+//   .run({ async: true });
 
 // stackhouse
 function rotateMatrix1(matrix) {
@@ -330,301 +330,301 @@ function rotateMatrix8(matrix) {
 //   }
 //   // return m; // this added to fix, but it fails anyway on loop.
 // }
-console.log(
-  compareMatrix(rotateMatrix1([[1, 2], [3, 4]]), [[3, 1], [4, 2]]),
-  compareMatrix(rotateMatrix1([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), [
-    [7, 4, 1],
-    [8, 5, 2],
-    [9, 6, 3]
-  ]),
-  compareMatrix(
-    rotateMatrix1([
-      [1, 2, 3, 4],
-      [5, 6, 7, 8],
-      [9, 10, 11, 12],
-      [13, 14, 15, 16]
-    ]),
-    [[13, 9, 5, 1], [14, 10, 6, 2], [15, 11, 7, 3], [16, 12, 8, 4]]
-  ),
-  compareMatrix(
-    rotateMatrix1([
-      [1, 2, 3, 4, 5],
-      [6, 7, 8, 9, 10],
-      [11, 12, 13, 14, 15],
-      [16, 17, 18, 19, 20],
-      [21, 22, 23, 24, 25]
-    ]),
-    [
-      [21, 16, 11, 6, 1],
-      [22, 17, 12, 7, 2],
-      [23, 18, 13, 8, 3],
-      [24, 19, 14, 9, 4],
-      [25, 20, 15, 10, 5]
-    ]
-  ),
-  compareMatrix(rotateMatrix1([]), []),
-  compareMatrix(rotateMatrix1([[]]), [[]]),
-  compareMatrix(rotateMatrix1([[1]]), [[1]])
-);
+// console.log(
+//   compareMatrix(rotateMatrix1([[1, 2], [3, 4]]), [[3, 1], [4, 2]]),
+//   compareMatrix(rotateMatrix1([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), [
+//     [7, 4, 1],
+//     [8, 5, 2],
+//     [9, 6, 3]
+//   ]),
+//   compareMatrix(
+//     rotateMatrix1([
+//       [1, 2, 3, 4],
+//       [5, 6, 7, 8],
+//       [9, 10, 11, 12],
+//       [13, 14, 15, 16]
+//     ]),
+//     [[13, 9, 5, 1], [14, 10, 6, 2], [15, 11, 7, 3], [16, 12, 8, 4]]
+//   ),
+//   compareMatrix(
+//     rotateMatrix1([
+//       [1, 2, 3, 4, 5],
+//       [6, 7, 8, 9, 10],
+//       [11, 12, 13, 14, 15],
+//       [16, 17, 18, 19, 20],
+//       [21, 22, 23, 24, 25]
+//     ]),
+//     [
+//       [21, 16, 11, 6, 1],
+//       [22, 17, 12, 7, 2],
+//       [23, 18, 13, 8, 3],
+//       [24, 19, 14, 9, 4],
+//       [25, 20, 15, 10, 5]
+//     ]
+//   ),
+//   compareMatrix(rotateMatrix1([]), []),
+//   compareMatrix(rotateMatrix1([[]]), [[]]),
+//   compareMatrix(rotateMatrix1([[1]]), [[1]])
+// );
 
-console.log(
-  compareMatrix(rotateMatrix2([[1, 2], [3, 4]]), [[3, 1], [4, 2]]),
-  compareMatrix(rotateMatrix2([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), [
-    [7, 4, 1],
-    [8, 5, 2],
-    [9, 6, 3]
-  ]),
-  compareMatrix(
-    rotateMatrix2([
-      [1, 2, 3, 4],
-      [5, 6, 7, 8],
-      [9, 10, 11, 12],
-      [13, 14, 15, 16]
-    ]),
-    [[13, 9, 5, 1], [14, 10, 6, 2], [15, 11, 7, 3], [16, 12, 8, 4]]
-  ),
-  compareMatrix(
-    rotateMatrix2([
-      [1, 2, 3, 4, 5],
-      [6, 7, 8, 9, 10],
-      [11, 12, 13, 14, 15],
-      [16, 17, 18, 19, 20],
-      [21, 22, 23, 24, 25]
-    ]),
-    [
-      [21, 16, 11, 6, 1],
-      [22, 17, 12, 7, 2],
-      [23, 18, 13, 8, 3],
-      [24, 19, 14, 9, 4],
-      [25, 20, 15, 10, 5]
-    ]
-  ),
-  compareMatrix(rotateMatrix2([]), []),
-  compareMatrix(rotateMatrix2([[]]), [[]]),
-  compareMatrix(rotateMatrix2([[1]]), [[1]])
-);
+// console.log(
+//   compareMatrix(rotateMatrix2([[1, 2], [3, 4]]), [[3, 1], [4, 2]]),
+//   compareMatrix(rotateMatrix2([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), [
+//     [7, 4, 1],
+//     [8, 5, 2],
+//     [9, 6, 3]
+//   ]),
+//   compareMatrix(
+//     rotateMatrix2([
+//       [1, 2, 3, 4],
+//       [5, 6, 7, 8],
+//       [9, 10, 11, 12],
+//       [13, 14, 15, 16]
+//     ]),
+//     [[13, 9, 5, 1], [14, 10, 6, 2], [15, 11, 7, 3], [16, 12, 8, 4]]
+//   ),
+//   compareMatrix(
+//     rotateMatrix2([
+//       [1, 2, 3, 4, 5],
+//       [6, 7, 8, 9, 10],
+//       [11, 12, 13, 14, 15],
+//       [16, 17, 18, 19, 20],
+//       [21, 22, 23, 24, 25]
+//     ]),
+//     [
+//       [21, 16, 11, 6, 1],
+//       [22, 17, 12, 7, 2],
+//       [23, 18, 13, 8, 3],
+//       [24, 19, 14, 9, 4],
+//       [25, 20, 15, 10, 5]
+//     ]
+//   ),
+//   compareMatrix(rotateMatrix2([]), []),
+//   compareMatrix(rotateMatrix2([[]]), [[]]),
+//   compareMatrix(rotateMatrix2([[1]]), [[1]])
+// );
 
-console.log(
-  compareMatrix(rotateMatrix3([[1, 2], [3, 4]]), [[3, 1], [4, 2]]),
-  compareMatrix(rotateMatrix3([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), [
-    [7, 4, 1],
-    [8, 5, 2],
-    [9, 6, 3]
-  ]),
-  compareMatrix(
-    rotateMatrix3([
-      [1, 2, 3, 4],
-      [5, 6, 7, 8],
-      [9, 10, 11, 12],
-      [13, 14, 15, 16]
-    ]),
-    [[13, 9, 5, 1], [14, 10, 6, 2], [15, 11, 7, 3], [16, 12, 8, 4]]
-  ),
-  compareMatrix(
-    rotateMatrix3([
-      [1, 2, 3, 4, 5],
-      [6, 7, 8, 9, 10],
-      [11, 12, 13, 14, 15],
-      [16, 17, 18, 19, 20],
-      [21, 22, 23, 24, 25]
-    ]),
-    [
-      [21, 16, 11, 6, 1],
-      [22, 17, 12, 7, 2],
-      [23, 18, 13, 8, 3],
-      [24, 19, 14, 9, 4],
-      [25, 20, 15, 10, 5]
-    ]
-  ),
-  compareMatrix(rotateMatrix3([]), []),
-  compareMatrix(rotateMatrix3([[]]), [[]]),
-  compareMatrix(rotateMatrix3([[1]]), [[1]])
-);
+// console.log(
+//   compareMatrix(rotateMatrix3([[1, 2], [3, 4]]), [[3, 1], [4, 2]]),
+//   compareMatrix(rotateMatrix3([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), [
+//     [7, 4, 1],
+//     [8, 5, 2],
+//     [9, 6, 3]
+//   ]),
+//   compareMatrix(
+//     rotateMatrix3([
+//       [1, 2, 3, 4],
+//       [5, 6, 7, 8],
+//       [9, 10, 11, 12],
+//       [13, 14, 15, 16]
+//     ]),
+//     [[13, 9, 5, 1], [14, 10, 6, 2], [15, 11, 7, 3], [16, 12, 8, 4]]
+//   ),
+//   compareMatrix(
+//     rotateMatrix3([
+//       [1, 2, 3, 4, 5],
+//       [6, 7, 8, 9, 10],
+//       [11, 12, 13, 14, 15],
+//       [16, 17, 18, 19, 20],
+//       [21, 22, 23, 24, 25]
+//     ]),
+//     [
+//       [21, 16, 11, 6, 1],
+//       [22, 17, 12, 7, 2],
+//       [23, 18, 13, 8, 3],
+//       [24, 19, 14, 9, 4],
+//       [25, 20, 15, 10, 5]
+//     ]
+//   ),
+//   compareMatrix(rotateMatrix3([]), []),
+//   compareMatrix(rotateMatrix3([[]]), [[]]),
+//   compareMatrix(rotateMatrix3([[1]]), [[1]])
+// );
 
-console.log(
-  compareMatrix(rotateMatrix4([[1, 2], [3, 4]]), [[3, 1], [4, 2]]),
-  compareMatrix(rotateMatrix4([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), [
-    [7, 4, 1],
-    [8, 5, 2],
-    [9, 6, 3]
-  ]),
-  compareMatrix(
-    rotateMatrix4([
-      [1, 2, 3, 4],
-      [5, 6, 7, 8],
-      [9, 10, 11, 12],
-      [13, 14, 15, 16]
-    ]),
-    [[13, 9, 5, 1], [14, 10, 6, 2], [15, 11, 7, 3], [16, 12, 8, 4]]
-  ),
-  compareMatrix(
-    rotateMatrix4([
-      [1, 2, 3, 4, 5],
-      [6, 7, 8, 9, 10],
-      [11, 12, 13, 14, 15],
-      [16, 17, 18, 19, 20],
-      [21, 22, 23, 24, 25]
-    ]),
-    [
-      [21, 16, 11, 6, 1],
-      [22, 17, 12, 7, 2],
-      [23, 18, 13, 8, 3],
-      [24, 19, 14, 9, 4],
-      [25, 20, 15, 10, 5]
-    ]
-  ),
-  compareMatrix(rotateMatrix4([]), []),
-  compareMatrix(rotateMatrix4([[]]), [[]]),
-  compareMatrix(rotateMatrix4([[1]]), [[1]])
-);
+// console.log(
+//   compareMatrix(rotateMatrix4([[1, 2], [3, 4]]), [[3, 1], [4, 2]]),
+//   compareMatrix(rotateMatrix4([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), [
+//     [7, 4, 1],
+//     [8, 5, 2],
+//     [9, 6, 3]
+//   ]),
+//   compareMatrix(
+//     rotateMatrix4([
+//       [1, 2, 3, 4],
+//       [5, 6, 7, 8],
+//       [9, 10, 11, 12],
+//       [13, 14, 15, 16]
+//     ]),
+//     [[13, 9, 5, 1], [14, 10, 6, 2], [15, 11, 7, 3], [16, 12, 8, 4]]
+//   ),
+//   compareMatrix(
+//     rotateMatrix4([
+//       [1, 2, 3, 4, 5],
+//       [6, 7, 8, 9, 10],
+//       [11, 12, 13, 14, 15],
+//       [16, 17, 18, 19, 20],
+//       [21, 22, 23, 24, 25]
+//     ]),
+//     [
+//       [21, 16, 11, 6, 1],
+//       [22, 17, 12, 7, 2],
+//       [23, 18, 13, 8, 3],
+//       [24, 19, 14, 9, 4],
+//       [25, 20, 15, 10, 5]
+//     ]
+//   ),
+//   compareMatrix(rotateMatrix4([]), []),
+//   compareMatrix(rotateMatrix4([[]]), [[]]),
+//   compareMatrix(rotateMatrix4([[1]]), [[1]])
+// );
 
-console.log(
-  compareMatrix(rotateMatrix5([[1, 2], [3, 4]]), [[3, 1], [4, 2]]),
-  compareMatrix(rotateMatrix5([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), [
-    [7, 4, 1],
-    [8, 5, 2],
-    [9, 6, 3]
-  ]),
-  compareMatrix(
-    rotateMatrix5([
-      [1, 2, 3, 4],
-      [5, 6, 7, 8],
-      [9, 10, 11, 12],
-      [13, 14, 15, 16]
-    ]),
-    [[13, 9, 5, 1], [14, 10, 6, 2], [15, 11, 7, 3], [16, 12, 8, 4]]
-  ),
-  compareMatrix(
-    rotateMatrix5([
-      [1, 2, 3, 4, 5],
-      [6, 7, 8, 9, 10],
-      [11, 12, 13, 14, 15],
-      [16, 17, 18, 19, 20],
-      [21, 22, 23, 24, 25]
-    ]),
-    [
-      [21, 16, 11, 6, 1],
-      [22, 17, 12, 7, 2],
-      [23, 18, 13, 8, 3],
-      [24, 19, 14, 9, 4],
-      [25, 20, 15, 10, 5]
-    ]
-  ),
-  compareMatrix(rotateMatrix5([]), []),
-  compareMatrix(rotateMatrix5([[]]), [[]]),
-  compareMatrix(rotateMatrix5([[1]]), [[1]])
-);
+// console.log(
+//   compareMatrix(rotateMatrix5([[1, 2], [3, 4]]), [[3, 1], [4, 2]]),
+//   compareMatrix(rotateMatrix5([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), [
+//     [7, 4, 1],
+//     [8, 5, 2],
+//     [9, 6, 3]
+//   ]),
+//   compareMatrix(
+//     rotateMatrix5([
+//       [1, 2, 3, 4],
+//       [5, 6, 7, 8],
+//       [9, 10, 11, 12],
+//       [13, 14, 15, 16]
+//     ]),
+//     [[13, 9, 5, 1], [14, 10, 6, 2], [15, 11, 7, 3], [16, 12, 8, 4]]
+//   ),
+//   compareMatrix(
+//     rotateMatrix5([
+//       [1, 2, 3, 4, 5],
+//       [6, 7, 8, 9, 10],
+//       [11, 12, 13, 14, 15],
+//       [16, 17, 18, 19, 20],
+//       [21, 22, 23, 24, 25]
+//     ]),
+//     [
+//       [21, 16, 11, 6, 1],
+//       [22, 17, 12, 7, 2],
+//       [23, 18, 13, 8, 3],
+//       [24, 19, 14, 9, 4],
+//       [25, 20, 15, 10, 5]
+//     ]
+//   ),
+//   compareMatrix(rotateMatrix5([]), []),
+//   compareMatrix(rotateMatrix5([[]]), [[]]),
+//   compareMatrix(rotateMatrix5([[1]]), [[1]])
+// );
 
-console.log(
-  compareMatrix(rotateMatrix6([[1, 2], [3, 4]]), [[3, 1], [4, 2]]),
-  compareMatrix(rotateMatrix6([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), [
-    [7, 4, 1],
-    [8, 5, 2],
-    [9, 6, 3]
-  ]),
-  compareMatrix(
-    rotateMatrix6([
-      [1, 2, 3, 4],
-      [5, 6, 7, 8],
-      [9, 10, 11, 12],
-      [13, 14, 15, 16]
-    ]),
-    [[13, 9, 5, 1], [14, 10, 6, 2], [15, 11, 7, 3], [16, 12, 8, 4]]
-  ),
-  compareMatrix(
-    rotateMatrix6([
-      [1, 2, 3, 4, 5],
-      [6, 7, 8, 9, 10],
-      [11, 12, 13, 14, 15],
-      [16, 17, 18, 19, 20],
-      [21, 22, 23, 24, 25]
-    ]),
-    [
-      [21, 16, 11, 6, 1],
-      [22, 17, 12, 7, 2],
-      [23, 18, 13, 8, 3],
-      [24, 19, 14, 9, 4],
-      [25, 20, 15, 10, 5]
-    ]
-  ),
-  compareMatrix(rotateMatrix6([]), []),
-  compareMatrix(rotateMatrix6([[]]), [[]]),
-  compareMatrix(rotateMatrix6([[1]]), [[1]])
-);
+// console.log(
+//   compareMatrix(rotateMatrix6([[1, 2], [3, 4]]), [[3, 1], [4, 2]]),
+//   compareMatrix(rotateMatrix6([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), [
+//     [7, 4, 1],
+//     [8, 5, 2],
+//     [9, 6, 3]
+//   ]),
+//   compareMatrix(
+//     rotateMatrix6([
+//       [1, 2, 3, 4],
+//       [5, 6, 7, 8],
+//       [9, 10, 11, 12],
+//       [13, 14, 15, 16]
+//     ]),
+//     [[13, 9, 5, 1], [14, 10, 6, 2], [15, 11, 7, 3], [16, 12, 8, 4]]
+//   ),
+//   compareMatrix(
+//     rotateMatrix6([
+//       [1, 2, 3, 4, 5],
+//       [6, 7, 8, 9, 10],
+//       [11, 12, 13, 14, 15],
+//       [16, 17, 18, 19, 20],
+//       [21, 22, 23, 24, 25]
+//     ]),
+//     [
+//       [21, 16, 11, 6, 1],
+//       [22, 17, 12, 7, 2],
+//       [23, 18, 13, 8, 3],
+//       [24, 19, 14, 9, 4],
+//       [25, 20, 15, 10, 5]
+//     ]
+//   ),
+//   compareMatrix(rotateMatrix6([]), []),
+//   compareMatrix(rotateMatrix6([[]]), [[]]),
+//   compareMatrix(rotateMatrix6([[1]]), [[1]])
+// );
 
-console.log(
-  compareMatrix(rotateMatrix7([[1, 2], [3, 4]]), [[3, 1], [4, 2]]),
-  compareMatrix(rotateMatrix7([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), [
-    [7, 4, 1],
-    [8, 5, 2],
-    [9, 6, 3]
-  ]),
-  compareMatrix(
-    rotateMatrix7([
-      [1, 2, 3, 4],
-      [5, 6, 7, 8],
-      [9, 10, 11, 12],
-      [13, 14, 15, 16]
-    ]),
-    [[13, 9, 5, 1], [14, 10, 6, 2], [15, 11, 7, 3], [16, 12, 8, 4]]
-  ),
-  compareMatrix(
-    rotateMatrix7([
-      [1, 2, 3, 4, 5],
-      [6, 7, 8, 9, 10],
-      [11, 12, 13, 14, 15],
-      [16, 17, 18, 19, 20],
-      [21, 22, 23, 24, 25]
-    ]),
-    [
-      [21, 16, 11, 6, 1],
-      [22, 17, 12, 7, 2],
-      [23, 18, 13, 8, 3],
-      [24, 19, 14, 9, 4],
-      [25, 20, 15, 10, 5]
-    ]
-  ),
-  compareMatrix(rotateMatrix7([]), []),
-  compareMatrix(rotateMatrix7([[]]), [[]]),
-  compareMatrix(rotateMatrix7([[1]]), [[1]])
-);
+// console.log(
+//   compareMatrix(rotateMatrix7([[1, 2], [3, 4]]), [[3, 1], [4, 2]]),
+//   compareMatrix(rotateMatrix7([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), [
+//     [7, 4, 1],
+//     [8, 5, 2],
+//     [9, 6, 3]
+//   ]),
+//   compareMatrix(
+//     rotateMatrix7([
+//       [1, 2, 3, 4],
+//       [5, 6, 7, 8],
+//       [9, 10, 11, 12],
+//       [13, 14, 15, 16]
+//     ]),
+//     [[13, 9, 5, 1], [14, 10, 6, 2], [15, 11, 7, 3], [16, 12, 8, 4]]
+//   ),
+//   compareMatrix(
+//     rotateMatrix7([
+//       [1, 2, 3, 4, 5],
+//       [6, 7, 8, 9, 10],
+//       [11, 12, 13, 14, 15],
+//       [16, 17, 18, 19, 20],
+//       [21, 22, 23, 24, 25]
+//     ]),
+//     [
+//       [21, 16, 11, 6, 1],
+//       [22, 17, 12, 7, 2],
+//       [23, 18, 13, 8, 3],
+//       [24, 19, 14, 9, 4],
+//       [25, 20, 15, 10, 5]
+//     ]
+//   ),
+//   compareMatrix(rotateMatrix7([]), []),
+//   compareMatrix(rotateMatrix7([[]]), [[]]),
+//   compareMatrix(rotateMatrix7([[1]]), [[1]])
+// );
 
-console.log(
-  compareMatrix(rotateMatrix8([[1, 2], [3, 4]]), [[3, 1], [4, 2]]),
-  compareMatrix(rotateMatrix8([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), [
-    [7, 4, 1],
-    [8, 5, 2],
-    [9, 6, 3]
-  ]),
-  compareMatrix(
-    rotateMatrix8([
-      [1, 2, 3, 4],
-      [5, 6, 7, 8],
-      [9, 10, 11, 12],
-      [13, 14, 15, 16]
-    ]),
-    [[13, 9, 5, 1], [14, 10, 6, 2], [15, 11, 7, 3], [16, 12, 8, 4]]
-  ),
-  compareMatrix(
-    rotateMatrix8([
-      [1, 2, 3, 4, 5],
-      [6, 7, 8, 9, 10],
-      [11, 12, 13, 14, 15],
-      [16, 17, 18, 19, 20],
-      [21, 22, 23, 24, 25]
-    ]),
-    [
-      [21, 16, 11, 6, 1],
-      [22, 17, 12, 7, 2],
-      [23, 18, 13, 8, 3],
-      [24, 19, 14, 9, 4],
-      [25, 20, 15, 10, 5]
-    ]
-  ),
-  compareMatrix(rotateMatrix8([]), []),
-  compareMatrix(rotateMatrix8([[]]), [[]]),
-  compareMatrix(rotateMatrix8([[1]]), [[1]])
-);
+// console.log(
+//   compareMatrix(rotateMatrix8([[1, 2], [3, 4]]), [[3, 1], [4, 2]]),
+//   compareMatrix(rotateMatrix8([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), [
+//     [7, 4, 1],
+//     [8, 5, 2],
+//     [9, 6, 3]
+//   ]),
+//   compareMatrix(
+//     rotateMatrix8([
+//       [1, 2, 3, 4],
+//       [5, 6, 7, 8],
+//       [9, 10, 11, 12],
+//       [13, 14, 15, 16]
+//     ]),
+//     [[13, 9, 5, 1], [14, 10, 6, 2], [15, 11, 7, 3], [16, 12, 8, 4]]
+//   ),
+//   compareMatrix(
+//     rotateMatrix8([
+//       [1, 2, 3, 4, 5],
+//       [6, 7, 8, 9, 10],
+//       [11, 12, 13, 14, 15],
+//       [16, 17, 18, 19, 20],
+//       [21, 22, 23, 24, 25]
+//     ]),
+//     [
+//       [21, 16, 11, 6, 1],
+//       [22, 17, 12, 7, 2],
+//       [23, 18, 13, 8, 3],
+//       [24, 19, 14, 9, 4],
+//       [25, 20, 15, 10, 5]
+//     ]
+//   ),
+//   compareMatrix(rotateMatrix8([]), []),
+//   compareMatrix(rotateMatrix8([[]]), [[]]),
+//   compareMatrix(rotateMatrix8([[1]]), [[1]])
+// );
 
 // results
 // rotateMatrix1 x 1,157,230 ops/sec ±4.42% (51 runs sampled)
@@ -636,3 +636,10 @@ console.log(
 // rotateMatrix7 x 19,687,974 ops/sec ±1.90% (49 runs sampled)
 // rotateMatrix8 x 19,682,950 ops/sec ±1.83% (52 runs sampled)
 // Fastest is rotateMatrix8,rotateMatrix7,rotateMatrix6
+
+// Practice list:
+// 1. 7 try1 ... clean code
+// 2. 8 memo ... clean code
+// 3. 6 memo ... clean code, easiest to understand
+// 4. 4 memo, ES5, O(n^2), O(1) ... clean code, function condensed
+// 5. 5 memo/hash chirpingmermaids ... messy and crowded code
