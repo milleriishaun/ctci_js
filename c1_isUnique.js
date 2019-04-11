@@ -527,7 +527,7 @@ function isUnique18(str) {
 // 7. 8 memo
 // 8. 18 advanced bitwise
 
-function isUnique14(str) {
+function isUniqueP14(str) {
   let arr = str.split('');
   for (let i = 0; i < arr.length - 1; i++) {
     for (let j = i + 1; j < arr.length; j++) {
