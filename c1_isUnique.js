@@ -307,6 +307,7 @@ var isUnique16 = function(string) {
 
 // CTCI JS Sols1
 // Regex
+// ES6
 const isUnique17 = str => !/(.).*\1/.test(str);
 
 // try 3, with bitwise operators
