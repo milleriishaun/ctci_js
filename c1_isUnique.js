@@ -109,7 +109,7 @@ const isUnique3 = str => new Set(str).size === str.length;
 
 // ctci js
 function isUnique4(str) {
-  // ASCII string longer than 128 has dups
+  // ASCII string longer than 128 has dups... unicode would be UTF-8, or UTF-32
   if (str.length > 128) {
     return false;
   }
@@ -279,7 +279,7 @@ function isUnique15(str) {
     return false;
   }
 
-  // O(n2) when banning use of hash or array etc
+  // O(n^2) when banning use of hash or array etc
   for (let i = 0; i < str.length; i += 1) {
     for (let j = i + 1; j < str.length; j += 1) {
       if (str[i] === str[j]) {
